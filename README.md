@@ -15,6 +15,10 @@ This is a personal portfolio website designed to showcase your projects, skills,
    ```
 2. Open `index.html` in your web browser to view the portfolio.
 
+The project now organizes styles and scripts in separate folders:
+* `css/styles.css` – all custom styles
+* `js/main.js` – JavaScript functionality
+
 ## Customization
 - Update the content in `index.html` to reflect your own projects, skills, and information.
 - Add or replace images in the `Images/` directory as needed. 
