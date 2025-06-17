@@ -17,7 +17,4 @@ This is a personal portfolio website designed to showcase your projects, skills,
 
 ## Customization
 - Update the content in `index.html` to reflect your own projects, skills, and information.
-- Add or replace images in the `Images/` directory as needed.
-
-## License
-This project is open source and available under the [MIT License](LICENSE). 
+- Add or replace images in the `Images/` directory as needed. 
