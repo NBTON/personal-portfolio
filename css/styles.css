@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 * {
 margin: 0;
@@ -6,15 +6,19 @@ padding: 0;
 box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
 background: theme('backgroundImage.section-gradient');
 color: theme('colors.white');
-font-family: 'Poppins', 'Roboto', Arial, sans-serif;
+font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
 line-height: 1.7;
 letter-spacing: 0.01em;
 overflow-x: hidden;
 min-height: 100vh;
-cursor: none;
+cursor: auto;
 }
 
 .logo span {
@@ -47,20 +51,6 @@ height: 300px;
 animation-delay: -4s;
 }
 
-.nav-links a::after {
-content: '';
-position: absolute;
-width: 0;
-height: 2px;
-bottom: -4px;
-left: 0;
-background-color: theme('colors.green');
-transition: width 0.3s;
-}
-
-.nav-links a:hover::after {
-width: 100%;
-}
 
 .typewriter {
 display: inline-block;
@@ -164,8 +154,8 @@ transition: all 0.3s ease;
 }
 
 .hamburger {
-cursor: none;
-width: 24px;
+    cursor: pointer;
+    width: 24px;
 height: 24px;
 position: relative;
 }
@@ -247,65 +237,8 @@ opacity: 1;
 pointer-events: all;
 }
 
-/* Custom Green Cursor Styles */
-.cursor-dot {
-width: 14px;
-height: 14px;
-background-color: #00bb77;
-border-radius: 50%;
-position: fixed;
-pointer-events: none;
-transform: translate(-50%, -50%);
-z-index: 9999;
-transition: transform 0.1s ease;
-opacity: 1;
-}
 
-.cursor-outline {
-width: 36px;
-height: 36px;
-border: 2px solid #00bb77;
-border-radius: 50%;
-position: fixed;
-pointer-events: none;
-transform: translate(-50%, -50%);
-z-index: 9999;
-transition: all 0.2s ease;
-opacity: 1;
-}
 
-.cursor-hover .cursor-outline {
-width: 50px;
-height: 50px;
-opacity: 0.7;
-transform: translate(-50%, -50%) scale(1.1);
-}
-
-.cursor-hidden {
-opacity: 0;
-transform: scale(0);
-}
-
-.cursor-click .cursor-outline {
-transform: translate(-50%, -50%) scale(0.8);
-border-width: 1px;
-}
-
-.cursor-text {
-position: fixed;
-font-size: 12px;
-color: theme('colors.green');
-transform: translate(20px, 20px);
-pointer-events: none;
-z-index: 9999;
-opacity: 0;
-transition: opacity 0.3s ease;
-}
-
-/* Hide pointer cursor for clickable elements */
-a, button, .btn, input, textarea, .hamburger, .close-menu, .skill-tag, .project-card {
-cursor: none !important;
-}
 
 /* Navigation underline effect for top navbar links only */
 .desktop-nav .nav-links a {
@@ -318,9 +251,9 @@ position: absolute;
 left: 0;
 bottom: -4px;
 width: 0;
-height: 3px;
-background-color: #00bb77;
-transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
+    height: 2px;
+    background-color: #00bb77;
+    transition: width 0.25s ease-in-out;
 border-radius: 2px;
 z-index: 1;
 }
@@ -410,9 +343,6 @@ footer {
     padding: 1.5rem 0;
 }
 
-.cursor-dot, .cursor-outline, .cursor-text {
-    display: none !important;
-}
 }
 
 /* Tablet and medium screens */
