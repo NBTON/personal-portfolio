@@ -1,4 +1,109 @@
 
+// Custom Green Cursor Functionality
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorOutline = document.querySelector('.cursor-outline');
+const cursorText = document.querySelector('.cursor-text');
+
+// Set initial position to center
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+let outlineX = mouseX;
+let outlineY = mouseY;
+let dotX = mouseX;
+let dotY = mouseY;
+
+// Set the initial position of the cursors
+cursorDot.style.left = `${dotX}px`;
+cursorDot.style.top = `${dotY}px`;
+cursorOutline.style.left = `${outlineX}px`;
+cursorOutline.style.top = `${outlineY}px`;
+
+// Speed of trailing effect (lower = faster)
+const DELAY_FACTOR_OUTLINE = 0.25;
+const DELAY_FACTOR_DOT = 0.15;
+
+// Track cursor position
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+// Show cursor when entering the document
+document.addEventListener('mouseenter', () => {
+  cursorDot.classList.remove('cursor-hidden');
+  cursorOutline.classList.remove('cursor-hidden');
+});
+
+// Hide cursor when leaving the browser window
+document.addEventListener('mouseleave', () => {
+  cursorDot.classList.add('cursor-hidden');
+  cursorOutline.classList.add('cursor-hidden');
+  cursorText.style.opacity = '0';
+});
+
+// Positions for cursor elements
+function animateCursor() {
+  // Update dot position (faster movement)
+  dotX += (mouseX - dotX) * DELAY_FACTOR_DOT;
+  dotY += (mouseY - dotY) * DELAY_FACTOR_DOT;
+  cursorDot.style.left = `${dotX}px`;
+  cursorDot.style.top = `${dotY}px`;
+
+  // Update outline position (slower movement)
+  outlineX += (mouseX - outlineX) * DELAY_FACTOR_OUTLINE;
+  outlineY += (mouseY - outlineY) * DELAY_FACTOR_OUTLINE;
+  cursorOutline.style.left = `${outlineX}px`;
+  cursorOutline.style.top = `${outlineY}px`;
+
+  requestAnimationFrame(animateCursor);
+}
+
+// Start cursor animation
+animateCursor();
+
+// Add hover effect to interactive elements
+const interactiveElements = document.querySelectorAll(
+  'a, button, .btn, input, textarea, .hamburger, .close-menu, .skill-tag, .project-card'
+);
+
+interactiveElements.forEach(element => {
+  element.addEventListener('mouseenter', () => {
+    cursorOutline.classList.add('cursor-hover');
+
+    // Add special text for buttons
+    if (element.tagName === 'BUTTON' || element.classList.contains('btn')) {
+      cursorText.style.opacity = '1';
+      cursorText.textContent = element.textContent.includes('Contact')
+        ? 'Contact'
+        : element.textContent.includes('View')
+          ? 'View'
+          : 'Click';
+      cursorText.style.left = `${mouseX + 20}px`;
+      cursorText.style.top = `${mouseY + 20}px`;
+    }
+  });
+
+  element.addEventListener('mousemove', e => {
+    if (element.tagName === 'BUTTON' || element.classList.contains('btn')) {
+      cursorText.style.left = `${e.clientX + 20}px`;
+      cursorText.style.top = `${e.clientY + 20}px`;
+    }
+  });
+
+  element.addEventListener('mouseleave', () => {
+    cursorOutline.classList.remove('cursor-hover');
+    cursorText.style.opacity = '0';
+  });
+
+  element.addEventListener('mousedown', () => {
+    cursorOutline.classList.add('cursor-click');
+  });
+
+  element.addEventListener('mouseup', () => {
+    cursorOutline.classList.remove('cursor-click');
+  });
+});
+
 // Mobile Navigation
 const hamburger = document.querySelector('.hamburger');
 const mobileNav = document.querySelector('.mobile-nav');
