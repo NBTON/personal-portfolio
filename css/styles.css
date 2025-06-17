@@ -38,17 +38,9 @@ animation: float 18s infinite ease-in-out;
 }
 
 .ambient-effect:nth-child(1) {
-top: -60px;
-left: 10%;
-animation-delay: 0s;
-}
-
-.ambient-effect:nth-child(2) {
-bottom: -80px;
-right: 15%;
-width: 300px;
-height: 300px;
-animation-delay: -4s;
+    top: -60px;
+    left: 10%;
+    animation-delay: 0s;
 }
 
 
