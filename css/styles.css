@@ -18,8 +18,19 @@ line-height: 1.7;
 letter-spacing: 0.01em;
 overflow-x: hidden;
 min-height: 100vh;
+cursor: none; /* Hide default cursor */
+}
+
+/* Hide default cursor on all elements */
+* {
 cursor: none;
 }
+
+/* Show default cursor on inputs and textareas for better UX */
+input, textarea, button, a {
+cursor: none;
+}
+
 
 .logo span {
 color: theme('colors.green');
@@ -229,65 +240,6 @@ opacity: 1;
 pointer-events: all;
 }
 
-/* Custom Green Cursor Styles */
-.cursor-dot {
-    width: 14px;
-    height: 14px;
-    background-color: #00bb77;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    transition: transform 0.1s ease;
-    opacity: 1;
-}
-
-.cursor-outline {
-    width: 36px;
-    height: 36px;
-    border: 2px solid #00bb77;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    transition: all 0.2s ease;
-    opacity: 1;
-}
-
-.cursor-hover .cursor-outline {
-    width: 50px;
-    height: 50px;
-    opacity: 0.7;
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-.cursor-hidden {
-    opacity: 0;
-    transform: scale(0);
-}
-
-.cursor-click .cursor-outline {
-    transform: translate(-50%, -50%) scale(0.8);
-    border-width: 1px;
-}
-
-.cursor-text {
-    position: fixed;
-    font-size: 12px;
-    color: theme('colors.green');
-    transform: translate(20px, 20px);
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-/* Hide pointer cursor for clickable elements */
-a, button, .btn, input, textarea, .hamburger, .close-menu, .skill-tag, .project-card {
-    cursor: none !important;
-}
 
 /* Navigation underline effect for top navbar links only */
 .desktop-nav .nav-links a {
@@ -495,3 +447,66 @@ from, to { border-color: transparent }
 
 .hidden-section { opacity: 0; transform: translateY(20px); }
 .visible-section { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+
+/* Animated underline styles */
+.section-underline {
+  width: 0;
+  height: 3px;
+  background-color: #00bb77;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 2px;
+  will-change: width;
+}
+
+.section-underline.animate {
+  width: 48px;
+}
+
+/* Custom Cursor Styles */
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00bb77;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.1s ease;
+  transition-property: background, transform;
+}
+
+/* Inner dot using pseudo-element for better performance */
+.cursor::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: #00bb77;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease;
+}
+
+.cursor.hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: rgba(0, 187, 119, 0.1);
+}
+
+.cursor.hover::before {
+  background-color: rgba(0, 187, 119, 0.8);
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+/* Hide custom cursor on mobile devices */
+@media (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+}

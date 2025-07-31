@@ -1,108 +1,73 @@
 
-// Custom Green Cursor Functionality
-const cursorDot = document.querySelector('.cursor-dot');
-const cursorOutline = document.querySelector('.cursor-outline');
-const cursorText = document.querySelector('.cursor-text');
-
-// Set initial position to center
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
-let outlineX = mouseX;
-let outlineY = mouseY;
-let dotX = mouseX;
-let dotY = mouseY;
-
-// Set the initial position of the cursors
-cursorDot.style.left = `${dotX}px`;
-cursorDot.style.top = `${dotY}px`;
-cursorOutline.style.left = `${outlineX}px`;
-cursorOutline.style.top = `${outlineY}px`;
-
-// Speed of trailing effect (lower = faster)
-const DELAY_FACTOR_OUTLINE = 0.25;
-const DELAY_FACTOR_DOT = 0.15;
-
-// Track cursor position
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
+// Custom Cursor
+document.addEventListener('DOMContentLoaded', () => {
+  // Only create custom cursor on non-touch devices
+  if (!isTouchDevice()) {
+    const cursor = document.createElement('div');
+    cursor.className = 'cursor';
+    document.body.appendChild(cursor);
+    
+    // Mouse move event with optimized performance
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+    
+    // Track mouse position
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    
+    // Smooth cursor animation using requestAnimationFrame
+    function animateCursor() {
+      // Add easing for smoother movement
+      cursorX += (mouseX - cursorX) * 0.15;
+      cursorY += (mouseY - cursorY) * 0.15;
+      
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top = cursorY + 'px';
+      
+      requestAnimationFrame(animateCursor);
+    }
+    
+    // Start the animation
+    animateCursor();
+    
+    // Hover effect for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .btn, .skill-tag, .project-card, input, textarea');
+    
+    interactiveElements.forEach(element => {
+      element.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover');
+      });
+      
+      element.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover');
+      });
+    });
+    
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity = '0';
+    });
+    
+    document.addEventListener('mouseenter', () => {
+      cursor.style.opacity = '1';
+    });
+  }
 });
 
-// Show cursor when entering the document
-document.addEventListener('mouseenter', () => {
-  cursorDot.classList.remove('cursor-hidden');
-  cursorOutline.classList.remove('cursor-hidden');
-});
-
-// Hide cursor when leaving the browser window
-document.addEventListener('mouseleave', () => {
-  cursorDot.classList.add('cursor-hidden');
-  cursorOutline.classList.add('cursor-hidden');
-  cursorText.style.opacity = '0';
-});
-
-// Positions for cursor elements
-function animateCursor() {
-  // Update dot position (faster movement)
-  dotX += (mouseX - dotX) * DELAY_FACTOR_DOT;
-  dotY += (mouseY - dotY) * DELAY_FACTOR_DOT;
-  cursorDot.style.left = `${dotX}px`;
-  cursorDot.style.top = `${dotY}px`;
-
-  // Update outline position (slower movement)
-  outlineX += (mouseX - outlineX) * DELAY_FACTOR_OUTLINE;
-  outlineY += (mouseY - outlineY) * DELAY_FACTOR_OUTLINE;
-  cursorOutline.style.left = `${outlineX}px`;
-  cursorOutline.style.top = `${outlineY}px`;
-
-  requestAnimationFrame(animateCursor);
+// Touch device detection
+function isTouchDevice() {
+  return ('ontouchstart' in window) ||
+         (navigator.maxTouchPoints > 0) ||
+         (navigator.msMaxTouchPoints > 0);
 }
 
-// Start cursor animation
-animateCursor();
+// Add touch-device class to body if touch device is detected
+if (isTouchDevice()) {
+  document.body.classList.add('touch-device');
+}
 
-// Add hover effect to interactive elements
-const interactiveElements = document.querySelectorAll(
-  'a, button, .btn, input, textarea, .hamburger, .close-menu, .skill-tag, .project-card'
-);
-
-interactiveElements.forEach(element => {
-  element.addEventListener('mouseenter', () => {
-    cursorOutline.classList.add('cursor-hover');
-
-    // Add special text for buttons
-    if (element.tagName === 'BUTTON' || element.classList.contains('btn')) {
-      cursorText.style.opacity = '1';
-      cursorText.textContent = element.textContent.includes('Contact')
-        ? 'Contact'
-        : element.textContent.includes('View')
-          ? 'View'
-          : 'Click';
-      cursorText.style.left = `${mouseX + 20}px`;
-      cursorText.style.top = `${mouseY + 20}px`;
-    }
-  });
-
-  element.addEventListener('mousemove', e => {
-    if (element.tagName === 'BUTTON' || element.classList.contains('btn')) {
-      cursorText.style.left = `${e.clientX + 20}px`;
-      cursorText.style.top = `${e.clientY + 20}px`;
-    }
-  });
-
-  element.addEventListener('mouseleave', () => {
-    cursorOutline.classList.remove('cursor-hover');
-    cursorText.style.opacity = '0';
-  });
-
-  element.addEventListener('mousedown', () => {
-    cursorOutline.classList.add('cursor-click');
-  });
-
-  element.addEventListener('mouseup', () => {
-    cursorOutline.classList.remove('cursor-click');
-  });
-});
 
 // Mobile Navigation
 const hamburger = document.querySelector('.hamburger');
@@ -197,20 +162,37 @@ tag.style.transform = '';
 
 // Add observer for section animations
 const sections = document.querySelectorAll("section");
-const options = { threshold: 0.1 };
+const sectionOptions = { threshold: 0.1 };
 
-const observer = new IntersectionObserver((entries, obs) => {
+const sectionObserver = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("visible-section");
       obs.unobserve(entry.target);
     }
   });
-}, options);
+}, sectionOptions);
 
 sections.forEach(section => {
   section.classList.add("hidden-section");
-  observer.observe(section);
+  sectionObserver.observe(section);
+});
+
+// Add observer for underline animations
+const underlines = document.querySelectorAll(".section-underline");
+const underlineOptions = { threshold: 0.5 };
+
+const underlineObserver = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animate");
+      obs.unobserve(entry.target);
+    }
+  });
+}, underlineOptions);
+
+underlines.forEach(underline => {
+  underlineObserver.observe(underline);
 });
 
 // Add scroll-to-top for Personal Portfolio Website View Project button
