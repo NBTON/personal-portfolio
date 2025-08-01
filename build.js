@@ -2,6 +2,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const { minify } = require('terser');
 const CleanCSS = require('clean-css');
+const sharp = require('sharp');
 
 // Configuration
 const config = {
@@ -17,6 +18,11 @@ const config = {
     'favicon.ico',
     'Images/'
   ],
+  favicon: {
+    src: 'favicon.ico',
+    sizes: [16, 32, 192, 512],
+    destDir: 'favicons'
+  },
   htmlFiles: [
     'index.html'
   ]
@@ -120,6 +126,38 @@ async function copyAssets() {
   }
 }
 
+async function generateFavicons() {
+  console.log('Generating favicon PNGs...');
+  
+  const srcPath = path.join(config.srcDir, config.favicon.src);
+  const destDir = path.join(config.distDir, config.favicon.destDir);
+  
+  // Ensure destination directory exists
+  await fs.ensureDir(destDir);
+  
+  // Generate favicons in different sizes
+  for (const size of config.favicon.sizes) {
+    const destPath = path.join(destDir, `favicon-${size}x${size}.png`);
+    
+    // Resize and convert to PNG
+    await sharp(srcPath)
+      .resize(size, size)
+      .toFormat('png')
+      .toFile(destPath);
+    
+    console.log(`Generated favicon-${size}x${size}.png`);
+  }
+  
+  // Also create apple-touch-icon.png (180x180)
+  const appleIconPath = path.join(destDir, 'apple-touch-icon.png');
+  await sharp(srcPath)
+    .resize(180, 180)
+    .toFormat('png')
+    .toFile(appleIconPath);
+  
+  console.log('Generated apple-touch-icon.png');
+}
+      
 async function updateHTMLReferences() {
   console.log('Updating HTML references...');
   
@@ -171,6 +209,9 @@ async function build() {
     
     // Copy assets
     await copyAssets();
+    
+    // Generate favicons
+    await generateFavicons();
     
     // Update HTML references
     await updateHTMLReferences();
