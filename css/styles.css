@@ -18,17 +18,11 @@ line-height: 1.7;
 letter-spacing: 0.01em;
 overflow-x: hidden;
 min-height: 100vh;
-cursor: none; /* Hide default cursor */
-}
-
-/* Hide default cursor on all elements */
-* {
-cursor: none;
 }
 
 /* Show default cursor on inputs and textareas for better UX */
 input, textarea, button, a {
-cursor: none;
+cursor: auto;
 }
 
 
@@ -184,16 +178,19 @@ top: 16px;
 }
 
 .mobile-nav {
-position: fixed;
-top: 0;
-right: -100%;
-height: 100vh;
-width: 300px;
-background: rgba(10, 10, 10, 0.95);
-z-index: 50;
-transition: all 0.4s ease;
-backdrop-filter: blur(10px);
-border-left: 1px solid rgba(0, 187, 119, 0.1);
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 300px;
+    /* Fallback for browsers without backdrop-filter */
+    background: rgba(10, 10, 10, 0.85);
+    background: rgba(10, 10, 10, 0.95);
+    z-index: 50;
+    transition: all 0.4s ease;
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    backdrop-filter: blur(10px);
+    border-left: 1px solid rgba(0, 187, 119, 0.1);
 }
 
 .mobile-nav.active {
@@ -315,6 +312,8 @@ width: 100%;
     left: -36px;
 }
 
+/* On very small screens, the timeline items are full-width and aligned left.
+   We keep the dot (.timeline-content::after) but move the spine near the left for layout consistency. */
 .experience-timeline::before {
     left: 10px;
 }
@@ -344,6 +343,15 @@ footer {
     padding: 1.5rem 0;
 }
 
+}
+
+/* Hide the central vertical timeline spine on small/mobile screens only.
+   This preserves all timeline items, dots, and spacing; only the spine is removed. */
+@media (max-width: 640px) {
+  .experience-timeline::before {
+    content: none;
+    display: none;
+  }
 }
 
 /* Tablet and medium screens */
@@ -506,7 +514,62 @@ from, to { border-color: transparent }
 
 /* Hide custom cursor on mobile devices */
 @media (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
+  
+  input, textarea, button, a {
+    cursor: auto !important;
+  }
+
   .cursor {
     display: none;
   }
+}
+
+/* 
+  Global Cursor Suppression
+  Purpose: Completely hide the native system cursor across the entire site so only a custom cursor is visible.
+  Notes:
+  - Uses broad selectors and !important to override inline and third-party styles.
+  - Maintains functionality like text selection and input focus; only hides the visual cursor.
+  - Escape hatch: apply the .allow-native-cursor class to any element to re-enable the native cursor for that subtree.
+*/
+
+/* Base suppression */
+html, body { cursor: none !important; }
+*, *::before, *::after { cursor: none !important; }
+
+/* Explicit coverage for interactive and special elements */
+a, button, [role="button"], input, textarea, select, summary, label, [tabindex], details,
+video, canvas, iframe, [contenteditable], svg, svg *, path, circle, rect, polygon, line, polyline, g {
+  cursor: none !important;
+}
+
+/* Specific input types that commonly reintroduce cursors */
+input[type="text"], input[type="search"], input[type="url"], input[type="email"], input[type="tel"],
+input[type="number"], input[type="password"], textarea, [contenteditable="true"] {
+  cursor: none !important;
+}
+
+/* Fallback for disabled, draggable, resizable, and resize handles */
+[draggable="true"], [draggable="false"], [aria-disabled="true"], :disabled, ::-webkit-resizer,
+::-webkit-scrollbar, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {
+  cursor: none !important;
+}
+
+/* Hover/active/focus pseudo-classes to prevent re-appearance */
+a:hover, a:active, a:focus,
+button:hover, button:active, button:focus,
+[role="button"]:hover, [role="button"]:active, [role="button"]:focus,
+input:hover, input:active, input:focus,
+textarea:hover, textarea:active, textarea:focus,
+select:hover, select:active, select:focus,
+[contenteditable]:hover, [contenteditable]:active, [contenteditable]:focus {
+  cursor: none !important;
+}
+
+/* Re-enable class for edge cases (escape hatch) */
+.allow-native-cursor, .allow-native-cursor *, .allow-native-cursor::before, .allow-native-cursor::after {
+  cursor: auto !important;
 }
