@@ -44,17 +44,17 @@ async function cleanDist() {
 
 async function minifyJS() {
   console.log('Minifying JavaScript files...');
-  
+
   for (const file of config.jsFiles) {
     const srcPath = path.join(config.srcDir, file.src);
     const destPath = path.join(config.distDir, file.dest);
-    
+
     // Ensure destination directory exists
     await fs.ensureDir(path.dirname(destPath));
-    
+
     // Read source file
     const code = await fs.readFile(srcPath, 'utf8');
-    
+
     if (isDevMode) {
       // In dev mode, just copy without minifying
       await fs.copy(srcPath, destPath);
@@ -65,7 +65,7 @@ async function minifyJS() {
         compress: true,
         mangle: true
       });
-      
+
       // Write minified code
       await fs.writeFile(destPath, minified.code);
       console.log(`Minified ${file.src} to ${file.dest}`);
@@ -75,17 +75,17 @@ async function minifyJS() {
 
 async function minifyCSS() {
   console.log('Minifying CSS files...');
-  
+
   for (const file of config.cssFiles) {
     const srcPath = path.join(config.srcDir, file.src);
     const destPath = path.join(config.distDir, file.dest);
-    
+
     // Ensure destination directory exists
     await fs.ensureDir(path.dirname(destPath));
-    
+
     // Read source file
     const code = await fs.readFile(srcPath, 'utf8');
-    
+
     if (isDevMode) {
       // In dev mode, just copy without minifying
       await fs.copy(srcPath, destPath);
@@ -93,7 +93,7 @@ async function minifyCSS() {
     } else {
       // Minify the code
       const minified = new CleanCSS({}).minify(code);
-      
+
       // Write minified code
       await fs.writeFile(destPath, minified.styles);
       console.log(`Minified ${file.src} to ${file.dest}`);
@@ -103,14 +103,14 @@ async function minifyCSS() {
 
 async function copyAssets() {
   console.log('Copying assets...');
-  
+
   for (const asset of config.assets) {
     const srcPath = path.join(config.srcDir, asset);
     const destPath = path.join(config.distDir, asset);
-    
+
     // Check if it's a directory or file
     const stat = await fs.stat(srcPath);
-    
+
     if (stat.isDirectory()) {
       // Copy directory recursively
       await fs.copy(srcPath, destPath);
@@ -118,7 +118,7 @@ async function copyAssets() {
     } else {
       // Ensure destination directory exists
       await fs.ensureDir(path.dirname(destPath));
-      
+
       // Copy file
       await fs.copy(srcPath, destPath);
       console.log(`Copied ${asset} to dist`);
@@ -128,66 +128,66 @@ async function copyAssets() {
 
 async function generateFavicons() {
   console.log('Generating favicon PNGs...');
-  
+
   const srcPath = path.join(config.srcDir, config.favicon.src);
   const destDir = path.join(config.distDir, config.favicon.destDir);
-  
+
   // Ensure destination directory exists
   await fs.ensureDir(destDir);
-  
+
   // Generate favicons in different sizes
   for (const size of config.favicon.sizes) {
     const destPath = path.join(destDir, `favicon-${size}x${size}.png`);
-    
+
     // Resize and convert to PNG
     await sharp(srcPath)
       .resize(size, size)
       .toFormat('png')
       .toFile(destPath);
-    
+
     console.log(`Generated favicon-${size}x${size}.png`);
   }
-  
+
   // Also create apple-touch-icon.png (180x180)
   const appleIconPath = path.join(destDir, 'apple-touch-icon.png');
   await sharp(srcPath)
     .resize(180, 180)
     .toFormat('png')
     .toFile(appleIconPath);
-  
+
   console.log('Generated apple-touch-icon.png');
 }
-      
+
 async function updateHTMLReferences() {
   console.log('Updating HTML references...');
-  
+
   for (const htmlFile of config.htmlFiles) {
     const srcPath = path.join(config.srcDir, htmlFile);
     const destPath = path.join(config.distDir, htmlFile);
-    
+
     // Read HTML file
     let html = await fs.readFile(srcPath, 'utf8');
-    
+
     // Update CSS references
     for (const file of config.cssFiles) {
       const originalSrc = file.src;
       const minifiedSrc = isDevMode ? file.src : file.dest;
-      
+
       // Create regex to match the CSS file reference
       const cssRegex = new RegExp(`href=["']${originalSrc}["']`, 'g');
       html = html.replace(cssRegex, `href="${minifiedSrc}"`);
     }
-    
+
     // Update JavaScript references
     for (const file of config.jsFiles) {
       const originalSrc = file.src;
       const minifiedSrc = isDevMode ? file.src : file.dest;
-      
+
       // Create regex to match the JS file reference
       const jsRegex = new RegExp(`src=["']${originalSrc}["']`, 'g');
       html = html.replace(jsRegex, `src="${minifiedSrc}"`);
     }
-    
+
     // Write updated HTML
     await fs.writeFile(destPath, html);
     console.log(`Updated references in ${htmlFile}`);
@@ -197,25 +197,25 @@ async function updateHTMLReferences() {
 async function build() {
   try {
     console.log(`Starting ${isDevMode ? 'development' : 'production'} build...`);
-    
+
     // Clean dist directory
     await cleanDist();
-    
+
     // Minify JS
     await minifyJS();
-    
+
     // Minify CSS
     await minifyCSS();
-    
+
     // Copy assets
     await copyAssets();
-    
+
     // Generate favicons
     await generateFavicons();
-    
+
     // Update HTML references
     await updateHTMLReferences();
-    
+
     console.log(`Build completed successfully!`);
     console.log(`Output directory: ${config.distDir}`);
   } catch (error) {

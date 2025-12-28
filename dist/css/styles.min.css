@@ -1,1 +1,575 @@
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap);*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:theme('backgroundImage.section-gradient');color:theme('colors.white');font-family:Inter,Poppins,Roboto,Arial,sans-serif;line-height:1.7;letter-spacing:.01em;overflow-x:hidden;min-height:100vh;cursor:none}*{cursor:none}a,button,input,textarea{cursor:none}.logo span{color:theme('colors.green')}.ambient-effect{position:absolute;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle, theme('colors.green') 0, rgba(0,187,119,0) 80%);filter:blur(60px);opacity:.25;z-index:0;animation:float 18s infinite ease-in-out}.ambient-effect:first-child{top:-60px;left:10%;animation-delay:0s}.typewriter{display:inline-block;overflow:hidden;border-right:.12em solid theme('colors.green');white-space:nowrap;animation:typing-name 2.2s steps(18,end),blink-caret .7s step-end infinite;font-family:inherit;font-size:inherit;vertical-align:bottom}.skill-tag{background:rgba(0,187,119,.13);color:theme('colors.green');padding:.5rem 1.1rem;border-radius:20px;font-size:.95rem;border:1px solid rgba(0,187,119,.22);font-weight:500;transition:all .3s ease}.skill-tag:hover{transform:translateY(-3px);background:rgba(0,187,119,.25);box-shadow:0 4px 12px rgba(0,187,119,.2)}.project-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 8px 32px 0 rgba(0,187,119,.18)}.experience-timeline::before{content:'';position:absolute;width:2px;height:100%;background:rgba(0,187,119,.18);left:50%;transform:translateX(-50%)}.timeline-content::after{content:'';position:absolute;width:18px;height:18px;background:theme('colors.green');border-radius:50%;top:22px}.left::after{right:-36px}.right::after{left:-36px}.contact-link:hover{color:theme('colors.green')}input,textarea{background:rgba(255,255,255,.04);border:1px solid rgba(0,187,119,.13);transition:border-color .2s}input:focus,textarea:focus{outline:0;border-color:theme('colors.green');box-shadow:0 0 0 3px rgba(0,187,119,.15)}.notification{position:fixed;bottom:24px;right:24px;background:theme('colors.green');color:theme('colors.black');padding:1rem 2rem;border-radius:7px;opacity:0;transition:opacity .3s;z-index:1000;font-weight:600;box-shadow:0 2px 12px 0 rgba(0,187,119,.1)}.notification.show{opacity:1}.mobile-menu{display:none;transition:all .3s ease}.hamburger{cursor:pointer;width:24px;height:24px;position:relative}.hamburger span{position:absolute;height:2px;width:100%;background:#fff;transition:all .3s ease}.hamburger span:first-child{top:0}.hamburger span:nth-child(2){top:8px}.hamburger span:nth-child(3){top:16px}.mobile-nav{position:fixed;top:0;right:-100%;height:100vh;width:300px;background:rgba(10,10,10,.95);z-index:50;transition:all .4s ease;backdrop-filter:blur(10px);border-left:1px solid rgba(0,187,119,.1)}.mobile-nav.active{right:0}.mobile-nav-links{display:flex;flex-direction:column;margin-top:80px;padding:0 2rem}.mobile-nav-links a{display:block;padding:1rem 0;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.1);font-size:1.1rem;transition:all .3s ease}.mobile-nav-links a:hover{color:theme('colors.green');padding-left:1rem}.mobile-nav-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:40;opacity:0;pointer-events:none;transition:opacity .4s ease}.mobile-nav-overlay.active{opacity:1;pointer-events:all}.desktop-nav .nav-links a{position:relative;overflow:hidden}.desktop-nav .nav-links a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background-color:#0b7;transition:width .25s ease-in-out;border-radius:2px;z-index:1}.desktop-nav .nav-links a:focus::after,.desktop-nav .nav-links a:hover::after{width:100%}@media (max-width:640px){.hero{min-height:70vh;padding-top:2rem;padding-bottom:2rem}.hero-content h1{font-size:2.2rem;line-height:1.2}.hero .btn{padding:.75rem 1.5rem;font-size:.9rem}.about-content{padding:1.5rem}.skill-tag{padding:.4rem .9rem;font-size:.85rem}.projects-grid{grid-template-columns:1fr;gap:1.5rem}.project-card{max-width:100%}.timeline-content{width:100%!important;margin-left:0!important;padding:1.5rem}.timeline-content::after{left:-36px}.experience-timeline::before{left:10px}.timeline-item{margin-bottom:2rem}.contact-container{flex-direction:column;padding:1.5rem}.contact-form{width:100%;margin-top:1.5rem}.logo{font-size:1.8rem}footer{padding:1.5rem 0}}@media (min-width:641px) and (max-width:1023px){.hero-content h1{font-size:3rem}.projects-grid{grid-template-columns:repeat(2,1fr)}.experience-timeline::before{left:50px}.timeline-content{width:calc(100% - 60px);margin-left:60px}.timeline-content::after{left:-36px}}@media (min-width:1024px){.hero{min-height:85vh}.projects-grid{grid-template-columns:repeat(3,1fr)}.contact-container{flex-direction:row}.contact-form{width:65%}}@media (max-width:900px){.timeline-content{width:calc(100% - 50px);margin-left:50px}.timeline-content::after{left:-36px}.experience-timeline::before{left:10px}.mobile-menu{display:block}.desktop-nav{display:none}}.hamburger span{transition:transform .3s ease,opacity .3s ease}.hamburger.active span:first-child{transform:translateY(8px) rotate(45deg)}.hamburger.active span:nth-child(2){opacity:0}.hamburger.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}.typewriter{animation:typing 2.8s steps(32,end),blink-caret .7s step-end infinite}@keyframes typing{from{width:0}to{width:100%}}@keyframes blink-caret{from,to{border-color:transparent}50%{border-color:#0b7}}.hidden-section{opacity:0;transform:translateY(20px)}.visible-section{opacity:1;transform:translateY(0);transition:opacity .6s ease-out,transform .6s ease-out}.section-underline{width:0;height:3px;background-color:#0b7;position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);transition:width .8s cubic-bezier(.25, .46, .45, .94);border-radius:2px;will-change:width}.section-underline.animate{width:48px}.cursor{width:20px;height:20px;border:2px solid #0b7;border-radius:50%;position:fixed;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;transition:all .1s ease;transition-property:background,transform}.cursor::before{content:'';position:absolute;top:50%;left:50%;width:6px;height:6px;background-color:#0b7;border-radius:50%;transform:translate(-50%,-50%);transition:all .15s ease}.cursor.hover{transform:translate(-50%,-50%) scale(1.5);background-color:rgba(0,187,119,.1)}.cursor.hover::before{background-color:rgba(0,187,119,.8);transform:translate(-50%,-50%) scale(.7)}@media (max-width:768px){.cursor{display:none}}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+background: theme('backgroundImage.section-gradient');
+color: theme('colors.white');
+font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
+line-height: 1.7;
+letter-spacing: 0.01em;
+overflow-x: hidden;
+min-height: 100vh;
+}
+
+/* Show default cursor on inputs and textareas for better UX */
+input, textarea, button, a {
+cursor: auto;
+}
+
+
+.logo span {
+color: theme('colors.green');
+}
+
+.ambient-effect {
+position: absolute;
+width: 220px;
+height: 220px;
+border-radius: 50%;
+background: radial-gradient(circle, theme('colors.green') 0%, rgba(0,187,119,0) 80%);
+filter: blur(60px);
+opacity: 0.25;
+z-index: 0;
+animation: float 18s infinite ease-in-out;
+}
+
+.ambient-effect:nth-child(1) {
+    top: -60px;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+
+.typewriter {
+display: inline-block;
+overflow: hidden;
+border-right: .12em solid theme('colors.green');
+white-space: nowrap;
+animation: typing-name 2.2s steps(18, end), blink-caret .7s step-end infinite;
+font-family: inherit;
+font-size: inherit;
+vertical-align: bottom;
+}
+
+.skill-tag {
+background: rgba(0, 187, 119, 0.13);
+color: theme('colors.green');
+padding: 0.5rem 1.1rem;
+border-radius: 20px;
+font-size: 0.95rem;
+border: 1px solid rgba(0, 187, 119, 0.22);
+font-weight: 500;
+transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+transform: translateY(-3px);
+background: rgba(0, 187, 119, 0.25);
+box-shadow: 0 4px 12px rgba(0, 187, 119, 0.2);
+}
+
+.project-card:hover {
+transform: translateY(-8px) scale(1.02);
+box-shadow: 0 8px 32px 0 rgba(0, 187, 119, 0.18);
+}
+
+.experience-timeline::before {
+content: '';
+position: absolute;
+width: 2px;
+height: 100%;
+background: rgba(0, 187, 119, 0.18);
+left: 50%;
+transform: translateX(-50%);
+}
+
+.timeline-content::after {
+content: '';
+position: absolute;
+width: 18px;
+height: 18px;
+background: theme('colors.green');
+border-radius: 50%;
+top: 22px;
+}
+
+.left::after {
+right: -36px;
+}
+
+.right::after {
+left: -36px;
+}
+
+.contact-link:hover {
+color: theme('colors.green');
+}
+
+input, textarea {
+background: rgba(255, 255, 255, 0.04);
+border: 1px solid rgba(0, 187, 119, 0.13);
+transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+outline: none;
+border-color: theme('colors.green');
+box-shadow: 0 0 0 3px rgba(0, 187, 119, 0.15);
+}
+
+.notification {
+position: fixed;
+bottom: 24px;
+right: 24px;
+background: theme('colors.green');
+color: theme('colors.black');
+padding: 1rem 2rem;
+border-radius: 7px;
+opacity: 0;
+transition: opacity 0.3s;
+z-index: 1000;
+font-weight: 600;
+box-shadow: 0 2px 12px 0 rgba(0, 187, 119, 0.10);
+}
+
+.notification.show {
+opacity: 1;
+}
+
+.mobile-menu {
+display: none;
+transition: all 0.3s ease;
+}
+
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+height: 24px;
+position: relative;
+}
+
+.hamburger span {
+position: absolute;
+height: 2px;
+width: 100%;
+background: white;
+transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+top: 0;
+}
+
+.hamburger span:nth-child(2) {
+top: 8px;
+}
+
+.hamburger span:nth-child(3) {
+top: 16px;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 300px;
+    /* Fallback for browsers without backdrop-filter */
+    background: rgba(10, 10, 10, 0.85);
+    background: rgba(10, 10, 10, 0.95);
+    z-index: 50;
+    transition: all 0.4s ease;
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    backdrop-filter: blur(10px);
+    border-left: 1px solid rgba(0, 187, 119, 0.1);
+}
+
+.mobile-nav.active {
+right: 0;
+}
+
+.mobile-nav-links {
+display: flex;
+flex-direction: column;
+margin-top: 80px;
+padding: 0 2rem;
+}
+
+.mobile-nav-links a {
+display: block;
+padding: 1rem 0;
+color: white;
+text-decoration: none;
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+font-size: 1.1rem;
+transition: all 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+color: theme('colors.green');
+padding-left: 1rem;
+}
+
+.mobile-nav-overlay {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(0, 0, 0, 0.7);
+z-index: 40;
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.4s ease;
+}
+
+.mobile-nav-overlay.active {
+opacity: 1;
+pointer-events: all;
+}
+
+
+/* Navigation underline effect for top navbar links only */
+.desktop-nav .nav-links a {
+position: relative;
+overflow: hidden;
+}
+.desktop-nav .nav-links a::after {
+content: '';
+position: absolute;
+left: 0;
+bottom: -4px;
+width: 0;
+    height: 2px;
+    background-color: #00bb77;
+    transition: width 0.25s ease-in-out;
+border-radius: 2px;
+z-index: 1;
+}
+.desktop-nav .nav-links a:hover::after,
+.desktop-nav .nav-links a:focus::after {
+width: 100%;
+}
+
+/* RESPONSIVE DESIGN IMPROVEMENTS */
+
+/* Mobile-first approach */
+@media (max-width: 640px) {
+/* Hero section */
+.hero {
+    min-height: 70vh;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+}
+
+.hero .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* About section */
+.about-content {
+    padding: 1.5rem;
+}
+
+.skill-tag {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+}
+
+/* Projects section */
+.projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.project-card {
+    max-width: 100%;
+}
+
+/* Experience section */
+.timeline-content {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 1.5rem;
+}
+
+.timeline-content::after {
+    left: -36px;
+}
+
+/* On very small screens, the timeline items are full-width and aligned left.
+   We keep the dot (.timeline-content::after) but move the spine near the left for layout consistency. */
+.experience-timeline::before {
+    left: 10px;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+}
+
+/* Contact section */
+.contact-container {
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.contact-form {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+/* Header */
+.logo {
+    font-size: 1.8rem;
+}
+
+/* Footer */
+footer {
+    padding: 1.5rem 0;
+}
+
+}
+
+/* Hide the central vertical timeline spine on small/mobile screens only.
+   This preserves all timeline items, dots, and spacing; only the spine is removed. */
+@media (max-width: 640px) {
+  .experience-timeline::before {
+    content: none;
+    display: none;
+  }
+}
+
+/* Tablet and medium screens */
+@media (min-width: 641px) and (max-width: 1023px) {
+.hero-content h1 {
+    font-size: 3rem;
+}
+
+.projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.experience-timeline::before {
+    left: 50px;
+}
+
+.timeline-content {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+}
+
+.timeline-content::after {
+    left: -36px;
+}
+}
+
+/* Desktop and large screens */
+@media (min-width: 1024px) {
+.hero {
+    min-height: 85vh;
+}
+
+.projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.contact-container {
+    flex-direction: row;
+}
+
+.contact-form {
+    width: 65%;
+}
+}
+
+/* Responsive navigation */
+@media (max-width: 900px) {
+.timeline-content {
+    width: calc(100% - 50px);
+    margin-left: 50px;
+}
+
+.timeline-content::after {
+    left: -36px;
+}
+
+.experience-timeline::before {
+    left: 10px;
+}
+
+.mobile-menu {
+    display: block;
+}
+
+.desktop-nav {
+    display: none;
+}
+}
+
+/* Mobile menu animation */
+.hamburger span {
+transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Typewriter effect adjustments */
+.typewriter {
+animation: typing 2.8s steps(32, end), blink-caret .7s step-end infinite;
+}
+
+@keyframes typing {
+from { width: 0; }
+to { width: 100%; }
+}
+
+@keyframes blink-caret {
+from, to { border-color: transparent }
+50% { border-color: #00bb77; }
+}
+
+.hidden-section { opacity: 0; transform: translateY(20px); }
+.visible-section { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+
+/* Animated underline styles */
+.section-underline {
+  width: 0;
+  height: 3px;
+  background-color: #00bb77;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 2px;
+  will-change: width;
+}
+
+.section-underline.animate {
+  width: 48px;
+}
+
+/* Custom Cursor Styles */
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00bb77;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.1s ease;
+  transition-property: background, transform;
+}
+
+/* Inner dot using pseudo-element for better performance */
+.cursor::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: #00bb77;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease;
+}
+
+.cursor.hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: rgba(0, 187, 119, 0.1);
+}
+
+.cursor.hover::before {
+  background-color: rgba(0, 187, 119, 0.8);
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+/* Hide custom cursor on mobile devices */
+@media (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
+  
+  input, textarea, button, a {
+    cursor: auto !important;
+  }
+
+  .cursor {
+    display: none;
+  }
+}
+
+/* 
+  Global Cursor Suppression
+  Purpose: Completely hide the native system cursor across the entire site so only a custom cursor is visible.
+  Notes:
+  - Uses broad selectors and !important to override inline and third-party styles.
+  - Maintains functionality like text selection and input focus; only hides the visual cursor.
+  - Escape hatch: apply the .allow-native-cursor class to any element to re-enable the native cursor for that subtree.
+*/
+
+/* Base suppression */
+html, body { cursor: none !important; }
+*, *::before, *::after { cursor: none !important; }
+
+/* Explicit coverage for interactive and special elements */
+a, button, [role="button"], input, textarea, select, summary, label, [tabindex], details,
+video, canvas, iframe, [contenteditable], svg, svg *, path, circle, rect, polygon, line, polyline, g {
+  cursor: none !important;
+}
+
+/* Specific input types that commonly reintroduce cursors */
+input[type="text"], input[type="search"], input[type="url"], input[type="email"], input[type="tel"],
+input[type="number"], input[type="password"], textarea, [contenteditable="true"] {
+  cursor: none !important;
+}
+
+/* Fallback for disabled, draggable, resizable, and resize handles */
+[draggable="true"], [draggable="false"], [aria-disabled="true"], :disabled, ::-webkit-resizer,
+::-webkit-scrollbar, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {
+  cursor: none !important;
+}
+
+/* Hover/active/focus pseudo-classes to prevent re-appearance */
+a:hover, a:active, a:focus,
+button:hover, button:active, button:focus,
+[role="button"]:hover, [role="button"]:active, [role="button"]:focus,
+input:hover, input:active, input:focus,
+textarea:hover, textarea:active, textarea:focus,
+select:hover, select:active, select:focus,
+[contenteditable]:hover, [contenteditable]:active, [contenteditable]:focus {
+  cursor: none !important;
+}
+
+/* Re-enable class for edge cases (escape hatch) */
+.allow-native-cursor, .allow-native-cursor *, .allow-native-cursor::before, .allow-native-cursor::after {
+  cursor: auto !important;
+}
