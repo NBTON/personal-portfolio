@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +9,29 @@
     <!-- Legacy favicon for older browsers -->
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
+
     <!-- Modern PNG favicons with cache-busting -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png?v=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v=1.0">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicons/favicon-192x192.png?v=1.0">
     <link rel="icon" type="image/png" sizes="512x512" href="/favicons/favicon-512x512.png?v=1.0">
-    
+
     <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v=1.0">
-    
+
     <!-- Microsoft Tiles -->
     <meta name="msapplication-TileColor" content="#00bb77">
     <meta name="msapplication-TileImage" content="/favicons/favicon-192x192.png?v=1.0">
     <meta name="msapplication-config" content="none">
-    
+
     <!-- Manifest -->
     <link rel="manifest" href="/favicons/site.webmanifest?v=1.0">
-    
+
     <!-- Theme Colors -->
     <meta name="theme-color" content="#00bb77">
     <meta name="msapplication-navbutton-color" content="#00bb77">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -86,13 +87,15 @@
     </script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="bg-dark text-white font-poppins">
 
     <!-- Ambient effects -->
     <div class="ambient-effect"></div>
-    
+
     <!-- Header -->
-    <header class="relative pt-6 pb-12 bg-gradient-to-br from-dark via-dark to-dark-green border-b-0 rounded-b-large shadow-md">
+    <header
+        class="relative pt-6 pb-12 bg-gradient-to-br from-dark via-dark to-dark-green border-b-0 rounded-b-large shadow-md">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Navigation -->
             <nav class="flex items-center justify-between py-4 relative z-10">
@@ -100,17 +103,21 @@
                 <div class="logo text-3xl md:text-4xl font-extrabold tracking-wider">
                     Omar <span class="text-green">Alshahrani</span>
                 </div>
-                
+
                 <!-- Desktop Navigation -->
                 <div class="desktop-nav">
                     <div class="nav-links hidden md:flex gap-8">
-                        <a href="#about" class="text-white text-lg font-medium relative transition-colors duration-200 hover:text-green">About</a>
-                        <a href="#projects" class="text-white text-lg font-medium relative transition-colors duration-200 hover:text-green">Projects</a>
-                        <a href="#experience" class="text-white text-lg font-medium relative transition-colors duration-200 hover:text-green">Experience</a>
-                        <a href="#contact" class="text-white text-lg font-medium relative transition-colors duration-200 hover:text-green">Contact</a>
+                        <a href="#about"
+                            class="text-white text-lg font-medium relative transition-colors duration-200 hover:text-green">About</a>
+                        <a href="#projects"
+                            class="text-white text-lg font-medium relative transition-colors duration-200 hover:text-green">Projects</a>
+                        <a href="#experience"
+                            class="text-white text-lg font-medium relative transition-colors duration-200 hover:text-green">Experience</a>
+                        <a href="#contact"
+                            class="text-white text-lg font-medium relative transition-colors duration-200 hover:text-green">Contact</a>
                     </div>
                 </div>
-                
+
                 <!-- Mobile Menu Button -->
                 <div class="mobile-menu md:hidden">
                     <div class="hamburger">
@@ -120,7 +127,7 @@
                     </div>
                 </div>
             </nav>
-            
+
             <!-- Hero Section -->
             <div class="hero flex items-center min-h-[80vh] relative z-10 py-10">
                 <div class="hero-content max-w-2xl">
@@ -131,10 +138,12 @@
                         Software Engineer & Data Science Enthusiast
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="btn bg-green text-dark py-3 px-6 rounded-lg font-semibold shadow-md hover:bg-dark hover:text-green border-2 border-green transition-colors duration-300">
+                        <a href="#projects"
+                            class="btn bg-green text-dark py-3 px-6 rounded-lg font-semibold shadow-md hover:bg-dark hover:text-green border-2 border-green transition-colors duration-300">
                             View My Work <i class="ml-2 fas fa-arrow-down animate-bounce"></i>
                         </a>
-                        <a href="#contact" class="btn bg-transparent text-green py-3 px-6 rounded-lg font-semibold shadow-md border-2 border-green hover:bg-green hover:text-dark transition-colors duration-300">
+                        <a href="#contact"
+                            class="btn bg-transparent text-green py-3 px-6 rounded-lg font-semibold shadow-md border-2 border-green hover:bg-green hover:text-dark transition-colors duration-300">
                             Contact Me <i class="ml-2 fas fa-paper-plane"></i>
                         </a>
                     </div>
@@ -142,7 +151,7 @@
             </div>
         </div>
     </header>
-    
+
     <!-- Mobile Navigation -->
     <div class="mobile-nav">
         <div class="flex justify-end p-6">
@@ -158,7 +167,7 @@
         </div>
     </div>
     <div class="mobile-nav-overlay"></div>
-    
+
     <!-- About Section -->
     <section id="about" class="py-16 bg-transparent">
         <div class="container mx-auto px-4">
@@ -168,19 +177,25 @@
                     <div class="section-underline"></div>
                 </h2>
             </div>
-            
-            <div class="about-content bg-card-bg rounded-custom shadow-card p-8 transition-all duration-300 hover:shadow-glow">
+
+            <div
+                class="about-content bg-card-bg rounded-custom shadow-card p-8 transition-all duration-300 hover:shadow-glow">
                 <div class="about-text">
                     <h3 class="text-green text-xl md:text-2xl font-semibold mb-4">
                         <i class="fas fa-user mr-2"></i>Software Engineer with a passion for Data Science
                     </h3>
                     <p class="text-light-gray mb-6">
-                        I'm an ambitious Software Engineering Student with skills and experience in Data Science, Web development, and IT consulting. As a creative problem-solver, I'm committed to continuous learning and leveraging emerging technologies to drive innovation and exceed business objectives.
+                        I'm an ambitious Software Engineering Student with skills and experience in Data Science, Web
+                        development, and IT consulting. As a creative problem-solver, I'm committed to continuous
+                        learning and leveraging emerging technologies to drive innovation and exceed business
+                        objectives.
                     </p>
                     <p class="text-light-gray mb-8">
-                        Currently pursuing my Bachelor of Science in Software Engineering at King Fahd University of Petroleum and Minerals, with a focus on software requirements engineering, design and construction, and intelligent decision support systems.
+                        Currently pursuing my Bachelor of Science in Software Engineering at King Fahd University of
+                        Petroleum and Minerals, with a focus on software requirements engineering, design and
+                        construction, and intelligent decision support systems.
                     </p>
-                    
+
                     <h4 class="text-white text-lg font-medium mb-4">My Skills:</h4>
                     <div class="skills flex flex-wrap gap-3">
                         <div class="skill-tag">Python</div>
@@ -196,116 +211,271 @@
             </div>
         </div>
     </section>
-    
-    <!-- Projects Section -->
-    <div id="project-showcase-container" class="relative bg-dark text-white overflow-hidden">
-        
-        <!-- Script for Showcase -->
-        <script src="js/project-showcase.js" type="module"></script>
 
-        <!-- Project 1 -->
-        <section class="project-section w-full h-screen relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark to-dark-green border-b border-green/10">
-            <div class="project-bg absolute inset-0 opacity-10 bg-[url('/Images/Halliburton-Emblem.jpg')] bg-cover bg-center"></div>
-            <div class="container mx-auto px-4 z-10 relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="project-content-wrapper p-8 bg-card-bg/90 backdrop-blur-sm rounded-custom border border-green/20 shadow-glow">
-                    <h3 class="text-3xl md:text-5xl font-bold text-green mb-6">Halliburton CAST GUI</h3>
-                    <p class="text-xl text-light-gray mb-8 leading-relaxed">
-                        A PySide6 (Qt) GUI for Halliburton's CAST well integrity modeling system. transformed a complex command-line tool into an intuitive interface for engineers.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="https://www.linkedin.com/in/omar-alshahrani/details/projects/" class="btn bg-green text-dark py-3 px-8 rounded-lg font-bold shadow-[0_0_20px_rgba(0,187,119,0.4)] hover:shadow-[0_0_30px_rgba(0,187,119,0.6)] transition-all duration-300">
-                            View Project
-                        </a>
-                    </div>
-                </div>
-                <div class="project-visual flex justify-center">
-                    <img src="/Images/Halliburton-Emblem.jpg" alt="Halliburton" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-green/30 shadow-[0_0_50px_rgba(0,187,119,0.2)] animate-pulse-green">
-                </div>
-            </div>
-        </section>
-
-        <!-- Project 2 -->
-        <section class="project-section w-full h-screen relative flex items-center justify-center overflow-hidden bg-dark">
-            <div class="project-bg absolute inset-0 opacity-10 bg-[url('/Images/1715947625699.jpg')] bg-cover bg-center"></div>
-            <div class="container mx-auto px-4 z-10 relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="project-visual flex justify-center order-2 md:order-1">
-                    <img src="/Images/1715947625699.jpg" alt="ConnectEd" class="rounded-custom w-full max-w-md object-cover border-2 border-green/20 shadow-card">
-                </div>
-                <div class="project-content-wrapper p-8 order-1 md:order-2">
-                    <h3 class="text-3xl md:text-5xl font-bold text-green mb-6">ConnectEd</h3>
-                    <p class="text-xl text-light-gray mb-8 leading-relaxed">
-                        A collaborative platform connecting students in the same course. Features study partner matching, in-app messaging, and session coordination.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="https://github.com/NBTON/SWE-363---Web-Engineering-Development-.git" class="btn bg-transparent border-2 border-green text-green py-3 px-8 rounded-lg font-bold hover:bg-green hover:text-dark transition-all duration-300">
-                            GitHub Repo
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Project 3 -->
-        <section class="project-section w-full h-screen relative flex items-center justify-center overflow-hidden bg-gradient-to-bl from-dark to-dark-green">
-            <div class="project-bg absolute inset-0 opacity-10 bg-[url('/Images/Halliburton-Emblem.jpg')] bg-cover bg-center"></div>
-            <div class="container mx-auto px-4 z-10 relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="project-content-wrapper p-8">
-                    <h3 class="text-3xl md:text-5xl font-bold text-green mb-6">ML Leak Classification</h3>
-                    <p class="text-xl text-light-gray mb-8 leading-relaxed">
-                        Machine Learning models to classify critical leakage types (G2G, L2L, G2L, L2G) in drilling operations for Halliburton. Enhanced safety and risk prevention.
-                    </p>
-                    <a href="https://www.linkedin.com/in/omar-alshahrani/details/projects/" class="btn bg-green text-dark py-3 px-8 rounded-lg font-bold shadow-lg hover:bg-white hover:text-green transition-all duration-300">
-                        View Details
-                    </a>
-                </div>
-                <div class="project-visual flex justify-center">
-                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-green/5 border border-green/20 flex items-center justify-center relative">
-                        <i class="fas fa-brain text-8xl text-green opacity-80"></i>
-                        <div class="absolute inset-0 border-2 border-dashed border-green/30 rounded-full animate-spin-slow"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Project 4 -->
-        <section class="project-section w-full h-screen relative flex items-center justify-center overflow-hidden bg-dark">
-             <div class="project-bg absolute inset-0 opacity-10 bg-[url('/Images/1715100401147.jpg')] bg-cover bg-center"></div>
-             <div class="container mx-auto px-4 z-10 relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="project-visual flex justify-center order-2 md:order-1">
-                     <img src="/Images/1715100401147.jpg" alt="Stroke Analysis" class="rounded-custom w-full max-w-md object-cover border-2 border-green/20 shadow-card grayscale hover:grayscale-0 transition-all duration-500">
-                </div>
-                <div class="project-content-wrapper p-8 order-1 md:order-2">
-                    <h3 class="text-3xl md:text-5xl font-bold text-green mb-6">Stroke Risk Analysis</h3>
-                    <p class="text-xl text-light-gray mb-8 leading-relaxed">
-                        Data science project predicting stroke likelihood based on health and lifestyle factors. Identifies key risk patterns using statistical analysis.
-                    </p>
-                    <a href="https://github.com/NBTON/ISE-291---Introduction-to-Data-Science.git" class="btn bg-transparent border-2 border-green text-green py-3 px-8 rounded-lg font-bold hover:bg-green hover:text-dark transition-all duration-300">
-                        View Analysis
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Project 5 -->
-        <section class="project-section w-full h-screen relative flex items-center justify-center overflow-hidden bg-gradient-to-t from-dark to-dark-green">
-            <div class="container mx-auto px-4 z-10 relative text-center">
-                 <div class="mb-8 flex justify-center">
-                    <div class="w-32 h-32 rounded-xl bg-green/10 flex items-center justify-center border-2 border-green text-green text-5xl">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                </div>
-                <h3 class="text-4xl md:text-6xl font-bold text-white mb-6">This Portfolio</h3>
-                <p class="text-xl text-light-gray mb-10 max-w-2xl mx-auto">
-                    A minimalist, performance-oriented portfolio. Designed with a custom build system, ambient effects, and now featuring <span class="text-green font-bold">GSAP</span> animations.
-                </p>
-                <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="btn bg-green text-dark py-4 px-10 rounded-full font-bold text-lg shadow-glow hover:scale-105 transition-transform duration-300">
-                    Back to Top <i class="fas fa-arrow-up ml-2"></i>
-                </button>
-            </div>
-        </section>
-
+    <!-- Progress Indicator (outside section for proper fixed positioning) -->
+    <div class="showcase-progress" id="showcaseProgress">
+        <div class="progress-dot active" data-index="0"></div>
+        <div class="progress-dot" data-index="1"></div>
+        <div class="progress-dot" data-index="2"></div>
+        <div class="progress-dot" data-index="3"></div>
+        <div class="progress-dot" data-index="4"></div>
+        <div class="progress-dot" data-index="5"></div>
     </div>
-    
+
+    <!-- Scroll Hint (outside section for proper fixed positioning) -->
+    <div class="scroll-hint" id="scrollHint">
+        <span>Scroll to explore</span>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+
+    <!-- Projects Section - Full Screen Showcase -->
+    <section id="projects" class="projects-showcase">
+        <!-- Project Panels Container -->
+        <div class="panels-container">
+            <!-- Project Panel 1: Rukn -->
+            <section class="project-panel active" data-index="0"
+                style="--accent: #e69500; --accent-light: rgba(230,149,0,0.12); --accent-border: rgba(230,149,0,0.2);">
+                <div class="panel-bg"
+                    style="background-image: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(120,70,10,0.9) 100%)">
+                </div>
+                <div class="panel-content">
+                    <div class="panel-image"
+                        style="border-color: var(--accent-border); background: var(--accent-light);">
+                        <img src="Images/Rukn.png" alt="Rukn: Location Intelligence Platform" />
+                    </div>
+                    <div class="panel-info">
+                        <span class="project-number" style="color: rgba(230,149,0,0.15);">01</span>
+                        <h2 class="panel-title" style="color: var(--accent);">Rukn: Location Intelligence Platform</h2>
+                        <p class="panel-description">
+                            An AI-powered platform that helps entrepreneurs find optimal business locations.
+                            Uses deep learning to analyze real-time data from Google Places, providing heat maps
+                            and intelligent recommendations for commercial site selection.
+                        </p>
+                        <div class="panel-tags">
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Next.js</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">AI/Deep
+                                Learning</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Location
+                                Intelligence</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Data
+                                Analytics</span>
+                        </div>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://www.rukn.estate/" class="panel-cta" target="_blank"
+                                style="color: var(--accent); border-color: var(--accent);">
+                                Live Demo <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="https://github.com/MQHANAD/rukn.git" class="panel-cta" target="_blank"
+                                style="color: var(--accent); border-color: var(--accent); background: var(--accent-light);">
+                                GitHub <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Panel 2: Halliburton GUI -->
+            <section class="project-panel" data-index="1"
+                style="--accent: #e63946; --accent-light: rgba(230,57,70,0.12); --accent-border: rgba(230,57,70,0.2);">
+                <div class="panel-bg"
+                    style="background-image: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(120,20,20,0.9) 100%)">
+                </div>
+                <div class="panel-content">
+                    <div class="panel-image"
+                        style="border-color: var(--accent-border); background: var(--accent-light);">
+                        <img src="Images/Halliburton-Emblem.jpg" alt="Halliburton CAST GUI" />
+                    </div>
+                    <div class="panel-info">
+                        <span class="project-number" style="color: rgba(230,57,70,0.15);">02</span>
+                        <h2 class="panel-title" style="color: var(--accent);">GUI Developer for Halliburton's CAST Well
+                            Integrity Modeling System</h2>
+                        <p class="panel-description">
+                            The design and development of a user-friendly PySide6 (Qt) GUI for Halliburton's CAST
+                            modeling system, transforming a complex command-line/MATLAB-based simulation tool into an
+                            intuitive interface.
+                        </p>
+                        <div class="panel-meta">
+                            <i class="far fa-calendar" style="color: var(--accent);"></i>
+                            <span>Jun 2025 - Jul 2025 | Associated with Halliburton</span>
+                        </div>
+                        <div class="panel-tags">
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Python</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">PySide6</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Qt</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">GUI
+                                Development</span>
+                        </div>
+                        <a href="https://www.linkedin.com/in/omar-alshahrani/details/projects/" class="panel-cta"
+                            target="_blank" style="color: var(--accent); border-color: var(--accent);">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Panel 3: ConnectEd -->
+            <section class="project-panel" data-index="2"
+                style="--accent: #a67c52; --accent-light: rgba(166,124,82,0.12); --accent-border: rgba(166,124,82,0.2);">
+                <div class="panel-bg"
+                    style="background-image: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(80,50,30,0.9) 100%)">
+                </div>
+                <div class="panel-content">
+                    <div class="panel-image"
+                        style="border-color: var(--accent-border); background: var(--accent-light);">
+                        <img src="Images/1715947625699.jpg" alt="ConnectEd Platform" />
+                    </div>
+                    <div class="panel-info">
+                        <span class="project-number" style="color: rgba(166,124,82,0.15);">03</span>
+                        <h2 class="panel-title" style="color: var(--accent);">ConnectEd: Study Group Platform</h2>
+                        <p class="panel-description">
+                            A collaborative platform that connects students in the same class or course. Enables users
+                            to find study partners regardless of location and coordinate study sessions through in-app
+                            messaging.
+                        </p>
+                        <div class="panel-tags">
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Web
+                                Development</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Collaboration</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Real-time</span>
+                        </div>
+                        <a href="https://github.com/NBTON/SWE-363---Web-Engineering-Development-.git" class="panel-cta"
+                            target="_blank" style="color: var(--accent); border-color: var(--accent);">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Panel 4: ML Leak Classification -->
+            <section class="project-panel" data-index="3"
+                style="--accent: #e63946; --accent-light: rgba(230,57,70,0.12); --accent-border: rgba(230,57,70,0.2);">
+                <div class="panel-bg"
+                    style="background-image: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(120,20,20,0.9) 100%)">
+                </div>
+                <div class="panel-content">
+                    <div class="panel-image"
+                        style="border-color: var(--accent-border); background: var(--accent-light);">
+                        <img src="Images/Halliburton-Emblem.jpg" alt="ML Leak Classification" />
+                    </div>
+                    <div class="panel-info">
+                        <span class="project-number" style="color: rgba(230,57,70,0.15);">04</span>
+                        <h2 class="panel-title" style="color: var(--accent);">Machine Learning Algorithm for Drilling
+                            Leak Classification</h2>
+                        <p class="panel-description">
+                            Developed and optimized machine learning models to classify 4 critical leakage types (G2G,
+                            L2L, G2L, L2G) in drilling operations, enhancing safety and preventing environmental risks.
+                        </p>
+                        <div class="panel-meta">
+                            <i class="far fa-calendar" style="color: var(--accent);"></i>
+                            <span>Jun 2025 - Jul 2025 | Associated with Halliburton</span>
+                        </div>
+                        <div class="panel-tags">
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Machine
+                                Learning</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Python</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Data
+                                Science</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Classification</span>
+                        </div>
+                        <a href="https://www.linkedin.com/in/omar-alshahrani/details/projects/" class="panel-cta"
+                            target="_blank" style="color: var(--accent); border-color: var(--accent);">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Panel 5: Stroke Risk -->
+            <section class="project-panel" data-index="4"
+                style="--accent: #8d99ae; --accent-light: rgba(141,153,174,0.12); --accent-border: rgba(141,153,174,0.2);">
+                <div class="panel-bg"
+                    style="background-image: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(60,60,65,0.9) 100%)">
+                </div>
+                <div class="panel-content">
+                    <div class="panel-image"
+                        style="border-color: var(--accent-border); background: var(--accent-light);">
+                        <img src="Images/1715100401147.jpg" alt="Stroke Risk Analysis" />
+                    </div>
+                    <div class="panel-info">
+                        <span class="project-number" style="color: rgba(141,153,174,0.15);">05</span>
+                        <h2 class="panel-title" style="color: var(--accent);">Stroke Risk Factors Analysis</h2>
+                        <p class="panel-description">
+                            A data science project aimed at predicting stroke likelihood based on factors related to
+                            health and lifestyle. Analyzes various health and social data to identify risk patterns.
+                        </p>
+                        <div class="panel-tags">
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Data
+                                Science</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Healthcare</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Predictive
+                                Analytics</span>
+                        </div>
+                        <a href="https://github.com/NBTON/ISE-291---Introduction-to-Data-Science.git" class="panel-cta"
+                            target="_blank" style="color: var(--accent); border-color: var(--accent);">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Panel 6: Portfolio -->
+            <section class="project-panel" data-index="5"
+                style="--accent: #00bb77; --accent-light: rgba(0,187,119,0.12); --accent-border: rgba(0,187,119,0.2);">
+                <div class="panel-bg"
+                    style="background-image: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(0,51,34,0.9) 100%)">
+                </div>
+                <div class="panel-content">
+                    <div class="panel-image icon-placeholder"
+                        style="border-color: var(--accent-border); background: var(--accent-light);">
+                        <i class="fas fa-laptop-code" style="color: var(--accent);"></i>
+                    </div>
+                    <div class="panel-info">
+                        <span class="project-number" style="color: rgba(0,187,119,0.15);">06</span>
+                        <h2 class="panel-title" style="color: var(--accent);">Personal Portfolio Website</h2>
+                        <p class="panel-description">
+                            A minimalist portfolio website designed with ambient effects, featuring a black and green
+                            color scheme. Showcases professional experience, projects, and skills with GSAP-powered
+                            animations.
+                        </p>
+                        <div class="panel-tags">
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">HTML/CSS</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">JavaScript</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">GSAP</span>
+                            <span class="tag"
+                                style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Web
+                                Design</span>
+                        </div>
+                        <a href="#" class="panel-cta" id="portfolioViewProjectBtn"
+                            style="color: var(--accent); border-color: var(--accent);">
+                            You're viewing it! <i class="fas fa-smile"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience" class="py-16 bg-transparent">
         <div class="container mx-auto px-4">
@@ -315,67 +485,82 @@
                     <div class="section-underline"></div>
                 </h2>
             </div>
-            
+
             <div class="experience-timeline relative max-w-4xl mx-auto">
                 <!-- Timeline Item 1 -->
                 <div class="timeline-item mb-14 relative">
-                    <div class="timeline-content w-5/12 left p-6 bg-card-bg rounded-custom shadow-card border border-green/10">
+                    <div
+                        class="timeline-content w-5/12 left p-6 bg-card-bg rounded-custom shadow-card border border-green/10">
                         <div class="timeline-date text-green font-semibold mb-2">
                             <i class="far fa-calendar mr-2"></i>June 2025 - Present
                         </div>
                         <h3 class="text-white text-xl font-semibold mb-1">Software Engineer Intern</h3>
                         <h4 class="text-light-gray text-lg mb-3">Halliburton</h4>
                         <p class="text-light-gray">
-                            Designing and building the GUI for our Well Integrity Monitoring (WIM) app. Implementing an ML model to classify downhole leakage types from acoustic signals. Integrating data pipelines to feed real-time sensor readings into our platform. Writing unit and integration tests to ensure reliability in harsh downhole conditions. Collaborating with cross-functional teams on feature planning and code reviews. Documenting workflows and sharing best practices to streamline future development.
+                            Designing and building the GUI for our Well Integrity Monitoring (WIM) app. Implementing an
+                            ML model to classify downhole leakage types from acoustic signals. Integrating data
+                            pipelines to feed real-time sensor readings into our platform. Writing unit and integration
+                            tests to ensure reliability in harsh downhole conditions. Collaborating with
+                            cross-functional teams on feature planning and code reviews. Documenting workflows and
+                            sharing best practices to streamline future development.
                         </p>
                     </div>
                 </div>
-                
+
                 <!-- Timeline Item 2 -->
                 <div class="timeline-item mb-14 relative">
-                    <div class="timeline-content w-5/12 right ml-auto p-6 bg-card-bg rounded-custom shadow-card border border-green/10">
+                    <div
+                        class="timeline-content w-5/12 right ml-auto p-6 bg-card-bg rounded-custom shadow-card border border-green/10">
                         <div class="timeline-date text-green font-semibold mb-2">
                             <i class="far fa-calendar mr-2"></i>November 2024 - April 2025
                         </div>
                         <h3 class="text-white text-xl font-semibold mb-1">Project Manager</h3>
                         <h4 class="text-light-gray text-lg mb-3">WNDR Group</h4>
                         <p class="text-light-gray">
-                            Overseeing planning, task delegation, and progress tracking to ensure efficient game development. Facilitating team communication, resolving challenges, and implementing agile workflows to optimize productivity and iteration cycles.
+                            Overseeing planning, task delegation, and progress tracking to ensure efficient game
+                            development. Facilitating team communication, resolving challenges, and implementing agile
+                            workflows to optimize productivity and iteration cycles.
                         </p>
                     </div>
                 </div>
-                
+
                 <!-- Timeline Item 3 -->
                 <div class="timeline-item mb-14 relative">
-                    <div class="timeline-content w-5/12 left p-6 bg-card-bg rounded-custom shadow-card border border-green/10">
+                    <div
+                        class="timeline-content w-5/12 left p-6 bg-card-bg rounded-custom shadow-card border border-green/10">
                         <div class="timeline-date text-green font-semibold mb-2">
                             <i class="far fa-calendar mr-2"></i>February 2024 - May 2024
                         </div>
                         <h3 class="text-white text-xl font-semibold mb-1">Mentee</h3>
                         <h4 class="text-light-gray text-lg mb-3">Young Leaders Advisory Board (YLAB)</h4>
                         <p class="text-light-gray">
-                            Participated in an inclusive program where KFUPM student teams draft and submit strategic proposals to decision-makers, offering student-centered advice to various university departments.
+                            Participated in an inclusive program where KFUPM student teams draft and submit strategic
+                            proposals to decision-makers, offering student-centered advice to various university
+                            departments.
                         </p>
                     </div>
                 </div>
-                
+
                 <!-- Timeline Item 4 -->
                 <div class="timeline-item relative">
-                    <div class="timeline-content w-5/12 right ml-auto p-6 bg-card-bg rounded-custom shadow-card border border-green/10">
+                    <div
+                        class="timeline-content w-5/12 right ml-auto p-6 bg-card-bg rounded-custom shadow-card border border-green/10">
                         <div class="timeline-date text-green font-semibold mb-2">
                             <i class="far fa-calendar mr-2"></i>October 2023 - February 2024
                         </div>
                         <h3 class="text-white text-xl font-semibold mb-1">Participant</h3>
                         <h4 class="text-light-gray text-lg mb-3">Fuel Program, Saudi Digital Academy</h4>
                         <p class="text-light-gray">
-                            Enrolled in the #FUEL program, which offers training courses aligned with the goals of #Vision2030. These courses focus on developing national skills in the most in-demand fields that will drive the Kingdom's digital transformation.
+                            Enrolled in the #FUEL program, which offers training courses aligned with the goals of
+                            #Vision2030. These courses focus on developing national skills in the most in-demand fields
+                            that will drive the Kingdom's digital transformation.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-transparent">
         <div class="container mx-auto px-4">
@@ -385,34 +570,41 @@
                     <div class="section-underline"></div>
                 </h2>
             </div>
-            
-            <div class="contact-container bg-card-bg rounded-custom shadow-card p-8 flex flex-col md:flex-row gap-10 transition-all duration-300 hover:shadow-glow">
+
+            <div
+                class="contact-container bg-card-bg rounded-custom shadow-card p-8 flex flex-col md:flex-row gap-10 transition-all duration-300 hover:shadow-glow">
                 <div class="contact-info flex-1">
                     <p class="text-light-gray mb-8">
                         Feel free to reach out if you'd like to connect, collaborate on a project, or just say hello!
                     </p>
                     <div class="contact-links flex flex-col gap-6">
-                        <a href="mailto:omar.aalsharani@gmail.com" class="contact-link text-white flex items-center transition-colors duration-300">
-                            <div class="contact-icon w-10 h-10 bg-green/10 rounded-full flex items-center justify-center border border-green/20 text-green mr-4">
+                        <a href="mailto:omar.aalsharani@gmail.com"
+                            class="contact-link text-white flex items-center transition-colors duration-300">
+                            <div
+                                class="contact-icon w-10 h-10 bg-green/10 rounded-full flex items-center justify-center border border-green/20 text-green mr-4">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             omar.aalsharani@gmail.com
                         </a>
-                        <a href="tel:+966506390599" class="contact-link text-white flex items-center transition-colors duration-300">
-                            <div class="contact-icon w-10 h-10 bg-green/10 rounded-full flex items-center justify-center border border-green/20 text-green mr-4">
+                        <a href="tel:+966506390599"
+                            class="contact-link text-white flex items-center transition-colors duration-300">
+                            <div
+                                class="contact-icon w-10 h-10 bg-green/10 rounded-full flex items-center justify-center border border-green/20 text-green mr-4">
                                 <i class="fas fa-phone"></i>
                             </div>
                             +966 (0) 50 639 0599
                         </a>
-                        <a href="https://linkedin.com/in/omar-alshahrani" class="contact-link text-white flex items-center transition-colors duration-300">
-                            <div class="contact-icon w-10 h-10 bg-green/10 rounded-full flex items-center justify-center border border-green/20 text-green mr-4">
+                        <a href="https://linkedin.com/in/omar-alshahrani"
+                            class="contact-link text-white flex items-center transition-colors duration-300">
+                            <div
+                                class="contact-icon w-10 h-10 bg-green/10 rounded-full flex items-center justify-center border border-green/20 text-green mr-4">
                                 <i class="fab fa-linkedin-in"></i>
                             </div>
                             LinkedIn Profile
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="contact-form flex-2 w-full md:w-2/3">
                     <form id="contactForm" class="flex flex-col gap-6">
                         <div class="form-group">
@@ -421,13 +613,16 @@
                         </div>
                         <div class="form-group">
                             <label for="email" class="text-light-gray mb-2">Email</label>
-                            <input type="email" id="email" placeholder="Your Email" class="w-full p-4 rounded-lg" required>
+                            <input type="email" id="email" placeholder="Your Email" class="w-full p-4 rounded-lg"
+                                required>
                         </div>
                         <div class="form-group">
                             <label for="message" class="text-light-gray mb-2">Message</label>
-                            <textarea id="message" rows="5" placeholder="Your Message" class="w-full p-4 rounded-lg" required></textarea>
+                            <textarea id="message" rows="5" placeholder="Your Message" class="w-full p-4 rounded-lg"
+                                required></textarea>
                         </div>
-                        <button type="submit" class="btn bg-green text-dark py-3 px-6 rounded-lg font-semibold shadow-md hover:bg-dark hover:text-green border-2 border-green transition-colors duration-300 mt-2">
+                        <button type="submit"
+                            class="btn bg-green text-dark py-3 px-6 rounded-lg font-semibold shadow-md hover:bg-dark hover:text-green border-2 border-green transition-colors duration-300 mt-2">
                             Send Message <i class="ml-2 fas fa-paper-plane"></i>
                         </button>
                     </form>
@@ -435,10 +630,11 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Notification -->
-    <div class="notification" id="notification">Message sent successfully! <i class="ml-2 fas fa-check-circle"></i></div>
-    
+    <div class="notification" id="notification">Message sent successfully! <i class="ml-2 fas fa-check-circle"></i>
+    </div>
+
     <!-- Footer -->
     <footer class="py-10 text-center border-t border-green/10">
         <div class="container mx-auto px-4">
@@ -450,14 +646,10 @@
                 <a href="https://linkedin.com/in/" class="text-green hover:text-white">
                     <i class="fab fa-linkedin-in text-2xl"></i>
                 </a>
-                <a href="https://twitter.com/" class="text-green hover:text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-2xl">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                </a>
             </div>
         </div>
     </footer>
     <script src="js/main.js"></script>
 </body>
+
 </html>
