@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -13,7 +13,7 @@ html {
 body {
   background: theme('backgroundImage.section-gradient');
   color: theme('colors.white');
-  font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
+  font-family: 'Space Grotesk', 'Roboto', Arial, sans-serif;
   line-height: 1.7;
   letter-spacing: 0.01em;
   overflow-x: hidden;
@@ -503,18 +503,21 @@ textarea:focus {
   width: 48px;
 }
 
-/* Custom Cursor Styles */
+/* Custom Cursor Styles - Enhanced with Magnetic Effect */
 .cursor {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border: 2px solid #00bb77;
   border-radius: 50%;
   position: fixed;
+  left: 0;
+  top: 0;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 9999;
-  transition: all 0.1s ease;
-  transition-property: background, transform;
+  z-index: 99999;
+  opacity: 1;
+  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-property: width, height, border-color, background, opacity;
 }
 
 /* Inner dot using pseudo-element for better performance */
@@ -532,13 +535,15 @@ textarea:focus {
 }
 
 .cursor.hover {
-  transform: translate(-50%, -50%) scale(1.5);
-  background-color: rgba(0, 187, 119, 0.1);
+  width: 36px;
+  height: 36px;
+  background-color: rgba(0, 187, 119, 0.08);
+  border-width: 1px;
 }
 
 .cursor.hover::before {
-  background-color: rgba(0, 187, 119, 0.8);
-  transform: translate(-50%, -50%) scale(0.7);
+  background-color: rgba(0, 187, 119, 0.6);
+  transform: translate(-50%, -50%) scale(0.5);
 }
 
 /* Hide custom cursor on mobile devices */
@@ -663,6 +668,81 @@ select:focus,
 .allow-native-cursor::before,
 .allow-native-cursor::after {
   cursor: auto !important;
+}
+
+/* ===== GSAP Enhanced Animations ===== */
+
+/* Floating Cards with 3D Transform */
+.about-content,
+.contact-container {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-content:hover,
+.contact-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 187, 119, 0.15);
+}
+
+/* Gradient Text Effect */
+.hero-name {
+  background: linear-gradient(135deg, #00bb77 0%, #00ff99 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced Button Magnetic Effect */
+.btn,
+.panel-cta {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.btn::before,
+.panel-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 187, 119, 0.3) 0%, rgba(0, 187, 119, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn:hover::before,
+.panel-cta:hover::before {
+  opacity: 1;
+}
+
+/* Skill Tag Enhancements */
+.skill-tag {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.skill-tag::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00bb77, transparent);
+  transition: width 0.3s ease;
+}
+
+.skill-tag:hover::after {
+  width: 100%;
 }
 
 /* ===== GSAP Full-Screen Project Showcase ===== */

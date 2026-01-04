@@ -131,10 +131,11 @@
             <!-- Hero Section -->
             <div class="hero flex items-center min-h-[80vh] relative z-10 py-10">
                 <div class="hero-content max-w-2xl">
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                        Hello, I'm <span class="typewriter text-green">Omar Alshahrani</span>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4"
+                        data-hero-title>
+                        Hello, I'm <span class="hero-name text-green">Omar Alshahrani</span>
                     </h1>
-                    <p class="subtitle text-light-gray text-base sm:text-xl mb-8">
+                    <p class="subtitle text-light-gray text-base sm:text-xl mb-8" data-hero-subtitle>
                         Software Engineer & Data Science Enthusiast
                     </p>
                     <div class="flex flex-wrap gap-4">
@@ -169,18 +170,18 @@
     <div class="mobile-nav-overlay"></div>
 
     <!-- About Section -->
-    <section id="about" class="py-16 bg-transparent">
+    <section id="about" class="py-16 bg-transparent" data-section>
         <div class="container mx-auto px-4">
             <div class="section-header text-center mb-12">
-                <h2 class="text-3xl font-bold inline-block relative">
+                <h2 class="text-3xl font-bold inline-block relative" data-heading>
                     About Me
                     <div class="section-underline"></div>
                 </h2>
             </div>
 
-            <div
-                class="about-content bg-card-bg rounded-custom shadow-card p-8 transition-all duration-300 hover:shadow-glow">
-                <div class="about-text">
+            <div class="about-content bg-card-bg rounded-custom shadow-card p-8 transition-all duration-300 hover:shadow-glow"
+                data-card>
+                <div class="about-text" data-content>
                     <h3 class="text-green text-xl md:text-2xl font-semibold mb-4">
                         <i class="fas fa-user mr-2"></i>Software Engineer with a passion for Data Science
                     </h3>
@@ -197,15 +198,15 @@
                     </p>
 
                     <h4 class="text-white text-lg font-medium mb-4">My Skills:</h4>
-                    <div class="skills flex flex-wrap gap-3">
-                        <div class="skill-tag">Python</div>
-                        <div class="skill-tag">Java</div>
-                        <div class="skill-tag">C++</div>
-                        <div class="skill-tag">Data Science</div>
-                        <div class="skill-tag">Full-Stack Development</div>
-                        <div class="skill-tag">Problem Solving</div>
-                        <div class="skill-tag">Decision Making</div>
-                        <div class="skill-tag">Project Management</div>
+                    <div class="skills flex flex-wrap gap-3" data-skills>
+                        <div class="skill-tag" data-skill>Python</div>
+                        <div class="skill-tag" data-skill>Java</div>
+                        <div class="skill-tag" data-skill>C++</div>
+                        <div class="skill-tag" data-skill>Data Science</div>
+                        <div class="skill-tag" data-skill>Full-Stack Development</div>
+                        <div class="skill-tag" data-skill>Problem Solving</div>
+                        <div class="skill-tag" data-skill>Decision Making</div>
+                        <div class="skill-tag" data-skill>Project Management</div>
                     </div>
                 </div>
             </div>
@@ -264,16 +265,10 @@
                                 style="background: var(--accent-light); color: var(--accent); border-color: var(--accent-border);">Data
                                 Analytics</span>
                         </div>
-                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                            <a href="https://www.rukn.estate/" class="panel-cta" target="_blank"
-                                style="color: var(--accent); border-color: var(--accent);">
-                                Live Demo <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="https://github.com/MQHANAD/rukn.git" class="panel-cta" target="_blank"
-                                style="color: var(--accent); border-color: var(--accent); background: var(--accent-light);">
-                                GitHub <i class="fab fa-github"></i>
-                            </a>
-                        </div>
+                        <a href="https://www.rukn.estate/" class="panel-cta" target="_blank"
+                            style="color: var(--accent); border-color: var(--accent);">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -477,18 +472,18 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-16 bg-transparent">
+    <section id="experience" class="py-16 bg-transparent" data-section>
         <div class="container mx-auto px-4">
             <div class="section-header text-center mb-12">
-                <h2 class="text-3xl font-bold inline-block relative">
+                <h2 class="text-3xl font-bold inline-block relative" data-heading>
                     Experience
                     <div class="section-underline"></div>
                 </h2>
             </div>
 
-            <div class="experience-timeline relative max-w-4xl mx-auto">
+            <div class="experience-timeline relative max-w-4xl mx-auto" data-timeline>
                 <!-- Timeline Item 1 -->
-                <div class="timeline-item mb-14 relative">
+                <div class="timeline-item mb-14 relative" data-timeline-item>
                     <div
                         class="timeline-content w-5/12 left p-6 bg-card-bg rounded-custom shadow-card border border-green/10">
                         <div class="timeline-date text-green font-semibold mb-2">
@@ -508,7 +503,7 @@
                 </div>
 
                 <!-- Timeline Item 2 -->
-                <div class="timeline-item mb-14 relative">
+                <div class="timeline-item mb-14 relative" data-timeline-item>
                     <div
                         class="timeline-content w-5/12 right ml-auto p-6 bg-card-bg rounded-custom shadow-card border border-green/10">
                         <div class="timeline-date text-green font-semibold mb-2">
@@ -525,7 +520,7 @@
                 </div>
 
                 <!-- Timeline Item 3 -->
-                <div class="timeline-item mb-14 relative">
+                <div class="timeline-item mb-14 relative" data-timeline-item>
                     <div
                         class="timeline-content w-5/12 left p-6 bg-card-bg rounded-custom shadow-card border border-green/10">
                         <div class="timeline-date text-green font-semibold mb-2">
@@ -542,7 +537,7 @@
                 </div>
 
                 <!-- Timeline Item 4 -->
-                <div class="timeline-item relative">
+                <div class="timeline-item relative" data-timeline-item>
                     <div
                         class="timeline-content w-5/12 right ml-auto p-6 bg-card-bg rounded-custom shadow-card border border-green/10">
                         <div class="timeline-date text-green font-semibold mb-2">
@@ -562,10 +557,10 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-transparent">
+    <section id="contact" class="py-16 bg-transparent" data-section>
         <div class="container mx-auto px-4">
             <div class="section-header text-center mb-12">
-                <h2 class="text-3xl font-bold inline-block relative">
+                <h2 class="text-3xl font-bold inline-block relative" data-heading>
                     Contact Me
                     <div class="section-underline"></div>
                 </h2>
@@ -573,7 +568,7 @@
 
             <div
                 class="contact-container bg-card-bg rounded-custom shadow-card p-8 flex flex-col md:flex-row gap-10 transition-all duration-300 hover:shadow-glow">
-                <div class="contact-info flex-1">
+                <div class="contact-info flex-1" data-contact-info>
                     <p class="text-light-gray mb-8">
                         Feel free to reach out if you'd like to connect, collaborate on a project, or just say hello!
                     </p>
@@ -606,7 +601,7 @@
                 </div>
 
                 <div class="contact-form flex-2 w-full md:w-2/3">
-                    <form id="contactForm" class="flex flex-col gap-6">
+                    <form id="contactForm" class="flex flex-col gap-6" data-form>
                         <div class="form-group">
                             <label for="name" class="text-light-gray mb-2">Name</label>
                             <input type="text" id="name" placeholder="Your Name" class="w-full p-4 rounded-lg" required>
@@ -649,7 +644,11 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+    <!-- GSAP Core and Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="dist/js/main.min.js"></script>
 </body>
 
 </html>
