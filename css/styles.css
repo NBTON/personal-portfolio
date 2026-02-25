@@ -88,25 +88,27 @@ body {
 .nav-link:hover { color: #fff; }
 .nav-link:hover::after { width: 100%; }
 
-/* Language Toggle */
+/* Language Toggle — styled to match .nav-link */
 .lang-toggle {
-  background: rgba(0,187,119,0.1);
-  border: 1px solid rgba(0,187,119,0.25);
-  color: #00bb77;
-  padding: 0.35rem 1rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  padding: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   cursor: pointer;
-  transition: all 0.3s;
-  font-family: 'TheYearOfHandicrafts', 'Noto Kufi Arabic', 'Space Grotesk', sans-serif;
-  letter-spacing: 0;
+  position: relative;
+  transition: color 0.25s;
+  font-family: inherit;
 }
-.lang-toggle:hover {
-  background: rgba(0,187,119,0.18);
-  border-color: #00bb77;
-  transform: translateY(-1px);
+.lang-toggle::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px; background: #00bb77;
+  transition: width 0.25s;
 }
+.lang-toggle:hover { color: #fff; }
+.lang-toggle:hover::after { width: 100%; }
 .lang-toggle-mobile {
   display: block;
   margin-top: 1.5rem;

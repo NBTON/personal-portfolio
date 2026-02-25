@@ -571,6 +571,13 @@ function toggleLanguage() {
 }
 
 function initLanguage() {
+  // Wire click handlers
+  const langToggle = document.getElementById('langToggle');
+  const langToggleMobile = document.getElementById('langToggleMobile');
+  if (langToggle) langToggle.addEventListener('click', toggleLanguage);
+  if (langToggleMobile) langToggleMobile.addEventListener('click', toggleLanguage);
+
+  // Restore saved language
   const saved = localStorage.getItem('lang');
   if (saved && saved !== 'en') {
     setLanguage(saved);
