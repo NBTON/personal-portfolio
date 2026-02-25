@@ -168,12 +168,14 @@ body {
 
 /* Buttons */
 .btn-primary {
-  display: inline-flex; align-items: center;
+  display: inline-flex; align-items: center; justify-content: center;
   background: #00bb77; color: #0a0a0a;
   padding: 0.85rem 1.8rem; border-radius: 12px;
   font-weight: 600; font-size: 0.95rem;
+  font-family: 'Space Grotesk', sans-serif;
   text-decoration: none; border: 2px solid #00bb77;
   transition: all 0.3s; position: relative; overflow: hidden;
+  cursor: pointer;
 }
 .btn-primary:hover {
   background: transparent; color: #00bb77;
@@ -666,6 +668,14 @@ body {
   border-color: rgba(0,187,119,0.4);
   box-shadow: 0 0 0 3px rgba(0,187,119,0.08);
 }
+.contact-form button {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Utilities */
+.w-full { width: 100%; }
+.ml-2 { margin-left: 0.5rem; }
 
 @media (max-width: 768px) {
   .contact-grid { grid-template-columns: 1fr; }
