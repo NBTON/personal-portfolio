@@ -63,10 +63,11 @@
                 O<span class="text-green">.</span>A
             </a>
             <div class="nav-links-desktop">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">Journey</a>
-                <a href="#projects" class="nav-link">Work</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#about" class="nav-link" data-i18n="nav-about">About</a>
+                <a href="#experience" class="nav-link" data-i18n="nav-journey">Journey</a>
+                <a href="#projects" class="nav-link" data-i18n="nav-work">Work</a>
+                <a href="#contact" class="nav-link" data-i18n="nav-contact">Contact</a>
+                <button id="langToggle" class="lang-toggle" onclick="toggleLanguage()">عربي</button>
             </div>
             <div class="nav-hamburger" id="navHamburger">
                 <span></span><span></span><span></span>
@@ -78,10 +79,11 @@
     <div class="mobile-nav" id="mobileNav">
         <div class="mobile-nav-close" id="mobileNavClose"><i class="fas fa-times"></i></div>
         <div class="mobile-nav-links">
-            <a href="#about">About</a>
-            <a href="#experience">Journey</a>
-            <a href="#projects">Work</a>
-            <a href="#contact">Contact</a>
+            <a href="#about" data-i18n="nav-about">About</a>
+            <a href="#experience" data-i18n="nav-journey">Journey</a>
+            <a href="#projects" data-i18n="nav-work">Work</a>
+            <a href="#contact" data-i18n="nav-contact">Contact</a>
+            <button id="langToggleMobile" class="lang-toggle lang-toggle-mobile" onclick="toggleLanguage()">عربي</button>
         </div>
     </div>
     <div class="mobile-nav-overlay" id="mobileOverlay"></div>
@@ -91,15 +93,15 @@
         <div class="hero-grid">
             <!-- Left: Text -->
             <div class="hero-text" data-hero-text>
-                <p class="hero-greeting">Hello, I'm</p>
-                <h1 class="hero-name-heading">Omar<br><span class="text-green">Alshahrani</span></h1>
-                <p class="hero-role">Software Engineer &amp;<br>AI &amp; Solution Architecture Enthusiast</p>
+                <p class="hero-greeting" data-i18n="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name-heading" data-i18n-html="hero-name">Omar<br><span class="text-green">Alshahrani</span></h1>
+                <p class="hero-role" data-i18n-html="hero-role">Software Engineer &amp;<br>AI &amp; Solution Architecture Enthusiast</p>
                 <div class="hero-ctas">
                     <a href="#about" class="btn-primary">
-                        Explore <i class="fas fa-arrow-down ml-2"></i>
+                        <span data-i18n="hero-explore">Explore</span> <i class="fas fa-arrow-down ml-2"></i>
                     </a>
                     <a href="#contact" class="btn-outline">
-                        Say Hello <i class="fas fa-hand-peace ml-2"></i>
+                        <span data-i18n="hero-hello">Say Hello</span> <i class="fas fa-hand-peace ml-2"></i>
                     </a>
                 </div>
             </div>
@@ -124,7 +126,7 @@
         </div>
         <!-- Scroll indicator -->
         <div class="hero-scroll-hint" data-scroll-hint>
-            <span>Scroll</span>
+            <span data-i18n="scroll">Scroll</span>
             <div class="scroll-line"></div>
         </div>
     </header>
@@ -133,7 +135,7 @@
     <section id="about" class="bento-section">
         <div class="section-label" data-heading>
             <span class="label-number">01</span>
-            <span class="label-text">About Me</span>
+            <span class="label-text" data-i18n="section-about">About Me</span>
             <span class="label-line"></span>
         </div>
 
@@ -141,13 +143,13 @@
             <!-- Large bio card -->
             <div class="bento-card bento-bio" data-bento-card>
                 <div class="bento-card-inner">
-                    <h2 class="bento-title">Software Engineer with a<br>passion for <span class="text-green">Solution Architecture</span></h2>
-                    <p class="bento-text">
+                    <h2 class="bento-title" data-i18n-html="bento-title">Software Engineer with a<br>passion for <span class="text-green">Solution Architecture</span></h2>
+                    <p class="bento-text" data-i18n="bento-text-1">
                         I'm an ambitious Software Engineering Student with skills and experience in Data Science, Web
                         development, and IT consulting. As a creative problem-solver, I'm committed to continuous
                         learning and leveraging emerging technologies to drive innovation and exceed business objectives.
                     </p>
-                    <p class="bento-text">
+                    <p class="bento-text" data-i18n="bento-text-2">
                         Currently pursuing my B.Sc. in Software Engineering at King Fahd University of
                         Petroleum and Minerals, focusing on software requirements, design, construction, and
                         intelligent decision support systems.
@@ -160,15 +162,15 @@
                 <div class="bento-card-inner">
                     <div class="stat-item">
                         <span class="stat-number" data-count="6">0</span>
-                        <span class="stat-label">Projects</span>
+                        <span class="stat-label" data-i18n="stat-projects">Projects</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number" data-count="3">0</span>
-                        <span class="stat-label">Industries</span>
+                        <span class="stat-label" data-i18n="stat-industries">Industries</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number text-green stat-kfupm">KFUPM</span>
-                        <span class="stat-label">University</span>
+                        <span class="stat-label" data-i18n="stat-university">University</span>
                     </div>
                 </div>
             </div>
@@ -176,21 +178,21 @@
             <!-- Currently tile -->
             <div class="bento-card bento-currently" data-bento-card>
                 <div class="bento-card-inner">
-                    <span class="bento-badge"><i class="fas fa-circle text-green text-xs mr-2 animate-pulse"></i>Currently</span>
-                    <h3 class="bento-card-title">Researcher @ SDAIA-KFUPM JRC-AI</h3>
-                    <p class="bento-card-sub">Undergraduate researcher at the SDAIA-KFUPM Joint Research Center for Artificial Intelligence since January 2026.</p>
+                    <span class="bento-badge"><i class="fas fa-circle text-green text-xs mr-2 animate-pulse"></i><span data-i18n="badge-current">Currently</span></span>
+                    <h3 class="bento-card-title" data-i18n="card-researcher">Researcher @ SDAIA-KFUPM JRC-AI</h3>
+                    <p class="bento-card-sub" data-i18n="card-researcher-desc">Undergraduate researcher at the SDAIA-KFUPM Joint Research Center for Artificial Intelligence since January 2026.</p>
                 </div>
             </div>
 
             <!-- Interests tile -->
             <div class="bento-card bento-interests" data-bento-card>
                 <div class="bento-card-inner">
-                    <span class="bento-badge">Interests</span>
+                    <span class="bento-badge" data-i18n="badge-interests">Interests</span>
                     <div class="interest-icons">
-                        <div class="interest-item"><i class="fas fa-brain"></i><span>AI/ML</span></div>
-                        <div class="interest-item"><i class="fas fa-chart-line"></i><span>Analytics</span></div>
-                        <div class="interest-item"><i class="fas fa-code"></i><span>Full-Stack</span></div>
-                        <div class="interest-item"><i class="fas fa-drafting-compass"></i><span>Solution Architecture</span></div>
+                        <div class="interest-item"><i class="fas fa-brain"></i><span data-i18n="interest-ai">AI/ML</span></div>
+                        <div class="interest-item"><i class="fas fa-chart-line"></i><span data-i18n="interest-analytics">Analytics</span></div>
+                        <div class="interest-item"><i class="fas fa-code"></i><span data-i18n="interest-fullstack">Full-Stack</span></div>
+                        <div class="interest-item"><i class="fas fa-drafting-compass"></i><span data-i18n="interest-arch">Solution Architecture</span></div>
                     </div>
                 </div>
             </div>
@@ -199,7 +201,7 @@
             <div class="bento-card bento-quote" data-bento-card>
                 <div class="bento-card-inner">
                     <i class="fas fa-quote-left text-green text-2xl mb-3 opacity-40"></i>
-                    <p class="quote-text">Leverage emerging technologies to drive innovation and exceed expectations.</p>
+                    <p class="quote-text" data-i18n="quote">Leverage emerging technologies to drive innovation and exceed expectations.</p>
                 </div>
             </div>
         </div>
@@ -249,45 +251,45 @@
     <section id="experience" class="experience-section">
         <div class="section-label" data-heading>
             <span class="label-number">02</span>
-            <span class="label-text">My Journey</span>
+            <span class="label-text" data-i18n="section-journey">My Journey</span>
             <span class="label-line"></span>
         </div>
 
         <div class="experience-scroll-wrapper">
             <div class="experience-track" data-exp-track>
                 <div class="exp-card" data-exp-card>
-                    <div class="exp-date">Jan 2026 — Present</div>
-                    <h3 class="exp-role">Undergraduate Researcher</h3>
-                    <h4 class="exp-company">SDAIA-KFUPM Joint Research Center for AI</h4>
-                    <p class="exp-desc">Conducting research at the SDAIA-KFUPM Joint Research Center for Artificial Intelligence (JRC-AI), working on cutting-edge AI research initiatives.</p>
+                    <div class="exp-date" data-i18n="exp1-date">Jan 2026 — Present</div>
+                    <h3 class="exp-role" data-i18n="exp1-role">Undergraduate Researcher</h3>
+                    <h4 class="exp-company" data-i18n="exp1-company">SDAIA-KFUPM Joint Research Center for AI</h4>
+                    <p class="exp-desc" data-i18n="exp1-desc">Conducting research at the SDAIA-KFUPM Joint Research Center for Artificial Intelligence (JRC-AI), working on cutting-edge AI research initiatives.</p>
                     <div class="exp-accent accent-green"></div>
                 </div>
                 <div class="exp-card" data-exp-card>
-                    <div class="exp-date">Jun 2025 — Aug 2025</div>
-                    <h3 class="exp-role">Software Engineer Intern</h3>
-                    <h4 class="exp-company">Halliburton — Singapore</h4>
-                    <p class="exp-desc">Designed the GUI for Well Integrity Monitoring. Implemented ML models to classify downhole leakage types. Integrated data pipelines and wrote tests for harsh-condition reliability.</p>
+                    <div class="exp-date" data-i18n="exp2-date">Jun 2025 — Aug 2025</div>
+                    <h3 class="exp-role" data-i18n="exp2-role">Software Engineer Intern</h3>
+                    <h4 class="exp-company" data-i18n="exp2-company">Halliburton — Singapore</h4>
+                    <p class="exp-desc" data-i18n="exp2-desc">Designed the GUI for Well Integrity Monitoring. Implemented ML models to classify downhole leakage types. Integrated data pipelines and wrote tests for harsh-condition reliability.</p>
                     <div class="exp-accent accent-red"></div>
                 </div>
                 <div class="exp-card" data-exp-card>
-                    <div class="exp-date">Nov 2024 — Apr 2025</div>
-                    <h3 class="exp-role">Project Manager</h3>
-                    <h4 class="exp-company">WNDR Group</h4>
-                    <p class="exp-desc">Overseeing planning, task delegation, and progress tracking. Facilitating team communication and implementing agile workflows to optimize game development productivity.</p>
+                    <div class="exp-date" data-i18n="exp3-date">Nov 2024 — Apr 2025</div>
+                    <h3 class="exp-role" data-i18n="exp3-role">Project Manager</h3>
+                    <h4 class="exp-company" data-i18n="exp3-company">WNDR Group</h4>
+                    <p class="exp-desc" data-i18n="exp3-desc">Overseeing planning, task delegation, and progress tracking. Facilitating team communication and implementing agile workflows to optimize game development productivity.</p>
                     <div class="exp-accent accent-orange"></div>
                 </div>
                 <div class="exp-card" data-exp-card>
-                    <div class="exp-date">Feb 2024 — May 2024</div>
-                    <h3 class="exp-role">Mentee</h3>
-                    <h4 class="exp-company">YLAB — KFUPM</h4>
-                    <p class="exp-desc">Participated in an inclusive program where KFUPM student teams draft and submit strategic proposals to decision-makers, offering student-centered advice to university departments.</p>
+                    <div class="exp-date" data-i18n="exp4-date">Feb 2024 — May 2024</div>
+                    <h3 class="exp-role" data-i18n="exp4-role">Mentee</h3>
+                    <h4 class="exp-company" data-i18n="exp4-company">YLAB — KFUPM</h4>
+                    <p class="exp-desc" data-i18n="exp4-desc">Participated in an inclusive program where KFUPM student teams draft and submit strategic proposals to decision-makers, offering student-centered advice to university departments.</p>
                     <div class="exp-accent accent-green"></div>
                 </div>
                 <div class="exp-card" data-exp-card>
-                    <div class="exp-date">Oct 2023 — Feb 2024</div>
-                    <h3 class="exp-role">Participant</h3>
-                    <h4 class="exp-company">Fuel Program — Saudi Digital Academy</h4>
-                    <p class="exp-desc">Enrolled in the #FUEL program offering training courses aligned with Vision2030 goals. Developing skills in the most in-demand fields driving the Kingdom's digital transformation.</p>
+                    <div class="exp-date" data-i18n="exp5-date">Oct 2023 — Feb 2024</div>
+                    <h3 class="exp-role" data-i18n="exp5-role">Participant</h3>
+                    <h4 class="exp-company" data-i18n="exp5-company">Fuel Program — Saudi Digital Academy</h4>
+                    <p class="exp-desc" data-i18n="exp5-desc">Enrolled in the #FUEL program offering training courses aligned with Vision2030 goals. Developing skills in the most in-demand fields driving the Kingdom's digital transformation.</p>
                     <div class="exp-accent accent-gray"></div>
                 </div>
             </div>
@@ -295,7 +297,7 @@
 
         <div class="experience-scroll-cue">
             <i class="fas fa-arrows-left-right text-green mr-2"></i>
-            <span class="text-muted text-sm">Drag or scroll to explore</span>
+            <span class="text-muted text-sm" data-i18n="scroll-cue">Drag or scroll to explore</span>
         </div>
     </section>
 
@@ -303,7 +305,7 @@
     <section id="projects" class="projects-section">
         <div class="section-label" data-heading>
             <span class="label-number">03</span>
-            <span class="label-text">Selected Work</span>
+            <span class="label-text" data-i18n="section-work">Selected Work</span>
             <span class="label-line"></span>
         </div>
 
@@ -379,53 +381,18 @@
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="contact-section">
         <div class="contact-statement" data-contact-statement>
-            <h2 class="contact-heading">Let's build<br>something <span class="text-green">great</span>.</h2>
-            <p class="contact-sub">Got a project in mind, a question, or just want to say hello?</p>
+            <h2 class="contact-heading" data-i18n-html="contact-heading">Let's build<br>something <span class="text-green">great</span>.</h2>
+            <p class="contact-sub" data-i18n="contact-sub">Got a project in mind, a question, or just want to say hello?</p>
         </div>
 
         <div class="contact-grid" data-contact-grid>
-            <div class="contact-links-col">
-                <a href="mailto:omar.aalsharani@gmail.com" class="contact-row">
-                    <div class="contact-icon-wrap"><i class="fas fa-envelope"></i></div>
-                    <div>
-                        <span class="contact-row-label">Email</span>
-                        <span class="contact-row-value">omar.aalsharani@gmail.com</span>
-                    </div>
-                    <i class="fas fa-arrow-right contact-row-arrow"></i>
-                </a>
-                <a href="tel:+966506390599" class="contact-row">
-                    <div class="contact-icon-wrap"><i class="fas fa-phone"></i></div>
-                    <div>
-                        <span class="contact-row-label">Phone</span>
-                        <span class="contact-row-value">+966 (0) 50 639 0599</span>
-                    </div>
-                    <i class="fas fa-arrow-right contact-row-arrow"></i>
-                </a>
-                <a href="https://linkedin.com/in/omar-alshahrani" target="_blank" rel="noopener" class="contact-row">
-                    <div class="contact-icon-wrap"><i class="fab fa-linkedin-in"></i></div>
-                    <div>
-                        <span class="contact-row-label">LinkedIn</span>
-                        <span class="contact-row-value">omar-alshahrani</span>
-                    </div>
-                    <i class="fas fa-arrow-right contact-row-arrow"></i>
-                </a>
-                <a href="https://github.com/NBTON" target="_blank" rel="noopener" class="contact-row">
-                    <div class="contact-icon-wrap"><i class="fab fa-github"></i></div>
-                    <div>
-                        <span class="contact-row-label">GitHub</span>
-                        <span class="contact-row-value">NBTON</span>
-                    </div>
-                    <i class="fas fa-arrow-right contact-row-arrow"></i>
-                </a>
-            </div>
-
             <div class="contact-form-col">
                 <form id="contactForm" class="contact-form" data-form>
-                    <input type="text" id="name" placeholder="Your name" required>
-                    <input type="email" id="email" placeholder="Your email" required>
-                    <textarea id="message" rows="4" placeholder="Your message" required></textarea>
+                    <input type="text" id="name" placeholder="Your name" data-i18n-ph="ph-name" required>
+                    <input type="email" id="email" placeholder="Your email" data-i18n-ph="ph-email" required>
+                    <textarea id="message" rows="4" placeholder="Your message" data-i18n-ph="ph-message" required></textarea>
                     <button type="submit" class="btn-primary w-full">
-                        Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        <span data-i18n="btn-send">Send Message</span> <i class="fas fa-paper-plane ml-2"></i>
                     </button>
                 </form>
             </div>
@@ -433,12 +400,12 @@
     </section>
 
     <!-- Notification -->
-    <div class="notification" id="notification">Message sent! <i class="ml-2 fas fa-check-circle"></i></div>
+    <div class="notification" id="notification"><span data-i18n="notification">Message sent!</span> <i class="ml-2 fas fa-check-circle"></i></div>
 
     <!-- ===== FOOTER ===== -->
     <footer class="site-footer">
         <div class="footer-inner">
-            <p class="text-muted">&copy; 2025 Omar Alshahrani</p>
+            <p class="text-muted" data-i18n="footer-copy">&copy; 2025 Omar Alshahrani</p>
             <div class="footer-links">
                 <a href="https://github.com/NBTON" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://linkedin.com/in/omar-alshahrani" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>

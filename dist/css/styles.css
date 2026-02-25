@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@font-face {
+  font-family: 'TheYearOfHandicrafts';
+  src: url('../fonts/TheYearOfHandicrafts.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -66,7 +74,7 @@ body {
   font-size: 1.6rem; font-weight: 700; color: #fff;
   text-decoration: none; letter-spacing: 0.05em;
 }
-.nav-links-desktop { display: flex; gap: 2.5rem; }
+.nav-links-desktop { display: flex; gap: 2.5rem; align-items: center; }
 .nav-link {
   color: rgba(255,255,255,0.6); text-decoration: none;
   font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em;
@@ -79,6 +87,33 @@ body {
 }
 .nav-link:hover { color: #fff; }
 .nav-link:hover::after { width: 100%; }
+
+/* Language Toggle */
+.lang-toggle {
+  background: rgba(0,187,119,0.1);
+  border: 1px solid rgba(0,187,119,0.25);
+  color: #00bb77;
+  padding: 0.35rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'TheYearOfHandicrafts', 'Noto Kufi Arabic', 'Space Grotesk', sans-serif;
+  letter-spacing: 0;
+}
+.lang-toggle:hover {
+  background: rgba(0,187,119,0.18);
+  border-color: #00bb77;
+  transform: translateY(-1px);
+}
+.lang-toggle-mobile {
+  display: block;
+  margin-top: 1.5rem;
+  width: fit-content;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+}
 
 /* Hamburger */
 .nav-hamburger {
@@ -601,48 +636,10 @@ body {
   font-size: 1.05rem; color: rgba(255,255,255,0.45);
 }
 .contact-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 3rem; align-items: start;
+  display: flex; justify-content: center;
 }
-
-.contact-links-col { display: flex; flex-direction: column; gap: 0.8rem; }
-.contact-row {
-  display: flex; align-items: center; gap: 1rem;
-  padding: 1.2rem 1.5rem; border-radius: 16px;
-  background: #111; border: 1px solid rgba(255,255,255,0.05);
-  text-decoration: none; color: #fff;
-  transition: all 0.3s;
-}
-.contact-row:hover {
-  background: rgba(0,187,119,0.04);
-  border-color: rgba(0,187,119,0.15);
-  transform: translateX(4px);
-}
-.contact-icon-wrap {
-  width: 40px; height: 40px;
-  background: rgba(0,187,119,0.08);
-  border: 1px solid rgba(0,187,119,0.15);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  color: #00bb77; font-size: 0.9rem; flex-shrink: 0;
-}
-.contact-row-label {
-  display: block; font-size: 0.7rem;
-  color: rgba(255,255,255,0.35);
-  text-transform: uppercase; letter-spacing: 0.08em;
-  margin-bottom: 0.1rem;
-}
-.contact-row-value {
-  display: block; font-size: 0.9rem;
-  color: rgba(255,255,255,0.7); font-weight: 500;
-}
-.contact-row-arrow {
-  margin-left: auto; color: rgba(255,255,255,0.15);
-  font-size: 0.8rem;
-  transition: color 0.3s, transform 0.3s;
-}
-.contact-row:hover .contact-row-arrow {
-  color: #00bb77; transform: translateX(4px);
+.contact-form-col {
+  width: 100%; max-width: 600px;
 }
 
 /* Contact form */
@@ -678,7 +675,7 @@ body {
 .ml-2 { margin-left: 0.5rem; }
 
 @media (max-width: 768px) {
-  .contact-grid { grid-template-columns: 1fr; }
+  .contact-form-col { max-width: 100%; }
 }
 
 /* ===== NOTIFICATION ===== */
@@ -720,3 +717,56 @@ body {
 
 /* KFUPM stat override */
 .stat-kfupm { font-size: 1.4rem; font-weight: 700; }
+
+/* ===== RTL / ARABIC SUPPORT ===== */
+html[dir="rtl"] body {
+  font-family: 'TheYearOfHandicrafts', 'Noto Kufi Arabic', sans-serif;
+  direction: rtl;
+}
+html[dir="rtl"] .nav-link::after { left: auto; right: 0; }
+html[dir="rtl"] .hero-ctas { justify-content: flex-start; }
+html[dir="rtl"] .label-line {
+  background: linear-gradient(to left, rgba(0,187,119,0.3), transparent);
+}
+html[dir="rtl"] .terminal-body { direction: ltr; text-align: left; }
+html[dir="rtl"] .terminal-card { direction: ltr; }
+html[dir="rtl"] .experience-scroll-cue { flex-direction: row-reverse; }
+html[dir="rtl"] .bento-title,
+html[dir="rtl"] .bento-text,
+html[dir="rtl"] .bento-card-sub,
+html[dir="rtl"] .exp-desc,
+html[dir="rtl"] .contact-heading,
+html[dir="rtl"] .contact-sub,
+html[dir="rtl"] .hero-role,
+html[dir="rtl"] .quote-text {
+  text-align: right;
+}
+html[dir="rtl"] .stat-number,
+html[dir="rtl"] .stat-label,
+html[dir="rtl"] .exp-date {
+  font-family: 'JetBrains Mono', 'TheYearOfHandicrafts', 'Noto Kufi Arabic', monospace;
+}
+html[dir="rtl"] .contact-form input,
+html[dir="rtl"] .contact-form textarea {
+  font-family: 'TheYearOfHandicrafts', 'Noto Kufi Arabic', sans-serif;
+  text-align: right;
+}
+html[dir="rtl"] .mobile-nav {
+  right: auto; left: -100%;
+  border-left: none;
+  border-right: 1px solid rgba(0,187,119,0.1);
+}
+html[dir="rtl"] .mobile-nav.active { left: 0; }
+html[dir="rtl"] .mobile-nav-close { right: auto; left: 1.5rem; }
+html[dir="rtl"] .footer-inner { flex-direction: row-reverse; }
+html[dir="rtl"] .hero-name-heading,
+html[dir="rtl"] .hero-greeting {
+  text-align: right;
+}
+@media (max-width: 768px) {
+  html[dir="rtl"] .hero-name-heading,
+  html[dir="rtl"] .hero-greeting,
+  html[dir="rtl"] .hero-role {
+    text-align: center;
+  }
+}
